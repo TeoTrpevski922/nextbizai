@@ -1,13 +1,429 @@
-<!doctype html><html lang="mk"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>NextBizAI — Davor Cut</title>
+<!DOCTYPE html>
+<html lang="mk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NextBizAI - Davor Cut</title>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
 <style>
-*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:#f5f6f8;color:#171717}header{height:64px;background:#111;color:#fff;display:flex;align-items:center;padding:0 28px;font-size:20px;font-weight:700}header span{font-size:13px;font-weight:400;opacity:.65;margin-left:10px}.wrap{max-width:1200px;margin:24px auto;padding:0 18px}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.card{background:#fff;border:1px solid #e7e7e7;border-radius:14px;padding:18px}.stat b{font-size:26px;display:block;margin-top:8px}.muted{color:#777;font-size:13px}.layout{display:grid;grid-template-columns:1fr 360px;gap:18px;margin-top:18px}.day{margin-bottom:15px}h2{margin:0 0 6px}.slots{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}.slot{padding:12px;border:1px solid #ddd;border-radius:10px;background:#f0f8f0}.slot.booked{background:#fff0f0;border-color:#efb0b0}.slot b{display:block;margin-bottom:4px}.slot small{color:#666}.services{display:grid;gap:8px}.service{display:flex;justify-content:space-between;padding:12px;border:1px solid #eee;border-radius:10px}@media(max-width:800px){.stats{grid-template-columns:repeat(2,1fr)}.layout{grid-template-columns:1fr}}
-</style></head><body><header>NextBizAI <span>· Davor Cut Dashboard</span></header><div class="wrap">
-<section class="stats"><div class="card stat"><div class="muted">Закажани денес</div><b id="booked">1</b></div><div class="card stat"><div class="muted">Слободни слотови</div><b id="free">19</b></div><div class="card stat"><div class="muted">Нови leads</div><b>0</b></div><div class="card stat"><div class="muted">Работно време</div><b style="font-size:20px">10:00–20:00</b></div></section>
-<div class="layout"><main class="card"><div class="day"><h2>📅 Четврток</h2><div class="muted">17.09.2026 · слотови на 30 минути</div></div><div id="slots" class="slots"></div></main>
-<aside class="card"><h2>💈 Услуги</h2><div class="muted" style="margin-bottom:14px">Davor Cut</div><div class="services">
-<div class="service"><span>Шишање</span><b>400 ден</b></div><div class="service"><span>Шишање + миење</span><b>450 ден</b></div><div class="service"><span>Шишање + брада</span><b>450 ден</b></div><div class="service"><span>Шишање + миење + брада</span><b>500 ден</b></div></div></aside></div></div>
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:Arial,sans-serif;
+  background:#f5f7fb;
+  color:#171717;
+}
+header{
+  height:64px;
+  background:#111827;
+  color:white;
+  display:flex;
+  align-items:center;
+  padding:0 24px;
+  font-size:20px;
+  font-weight:700;
+}
+header span{
+  opacity:.6;
+  font-size:13px;
+  margin-left:10px;
+}
+.wrap{
+  max-width:1200px;
+  margin:24px auto;
+  padding:0 20px;
+}
+.stats{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:14px;
+  margin-bottom:24px;
+}
+.card{
+  background:white;
+  border:1px solid #e5e7eb;
+  border-radius:14px;
+  padding:18px;
+  box-shadow:0 4px 14px #00000008;
+}
+.muted{
+  color:#6b7280;
+  font-size:13px;
+}
+.value{
+  font-size:27px;
+  font-weight:800;
+  margin-top:8px;
+}
+.layout{
+  display:grid;
+  grid-template-columns:1fr 360px;
+  gap:18px;
+}
+.day{
+  margin-bottom:15px;
+}
+.day h2{
+  margin:0 0 6px;
+  font-size:20px;
+}
+.slots{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:10px;
+}
+.slot{
+  padding:14px;
+  border:1px solid #dbe3ef;
+  border-radius:10px;
+  background:#effaf2;
+}
+.slot.booked{
+  background:#fff1f2;
+  border-color:#fecdd3;
+}
+.time{
+  font-weight:800;
+}
+.status{
+  font-size:12px;
+  margin-top:4px;
+  color:#16a34a;
+}
+.booked .status{
+  color:#dc2626;
+}
+.booking-info{
+  margin-top:8px;
+  font-size:13px;
+}
+.services{
+  display:grid;
+  gap:10px;
+}
+.service{
+  display:flex;
+  justify-content:space-between;
+  padding:11px 0;
+  border-bottom:1px solid #eee;
+}
+button{
+  border:0;
+  background:#111827;
+  color:white;
+  border-radius:9px;
+  padding:11px 15px;
+  cursor:pointer;
+  font-weight:700;
+}
+.loading{
+  padding:25px;
+  text-align:center;
+  color:#6b7280;
+}
+.error{
+  background:#fff1f2;
+  border:1px solid #fecdd3;
+  color:#b91c1c;
+  padding:15px;
+  border-radius:10px;
+  margin-bottom:20px;
+}
+@media(max-width:800px){
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .layout{grid-template-columns:1fr}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  NextBizAI
+  <span>· Davor Cut Dashboard</span>
+</header>
+
+<div class="wrap">
+
+  <div id="error"></div>
+
+  <section class="stats">
+    <div class="card">
+      <div class="muted">Закажани денес</div>
+      <div class="value" id="booked">-</div>
+    </div>
+
+    <div class="card">
+      <div class="muted">Слободни слотови</div>
+      <div class="value" id="free">-</div>
+    </div>
+
+    <div class="card">
+      <div class="muted">Вкупно клиенти</div>
+      <div class="value" id="customers">-</div>
+    </div>
+
+    <div class="card">
+      <div class="muted">Работно време</div>
+      <div class="value">10:00–20:00</div>
+    </div>
+  </section>
+
+  <div class="layout">
+
+    <main class="card">
+      <div class="day">
+        <h2>📅 Четврток</h2>
+        <div class="muted">17.09.2026 · слотови на 30 минути</div>
+      </div>
+
+      <div id="slots" class="slots">
+        <div class="loading">Ги вчитувам податоците...</div>
+      </div>
+    </main>
+
+    <aside class="card">
+      <h2>Услуги</h2>
+      <div class="muted" style="margin-bottom:14px">Davor Cut</div>
+
+      <div id="services" class="services">
+        <div class="loading">Ги вчитувам услугите...</div>
+      </div>
+    </aside>
+
+  </div>
+</div>
+
 <script>
-const slots=[];for(let h=10;h<20;h++){slots.push(String(h).padStart(2,'0')+':00');slots.push(String(h).padStart(2,'0')+':30')}
-const bookings={'15:00':{name:'Teo Trpevski',service:'Шишање + брада',price:450}};
-function render(){const el=document.getElementById('slots');el.innerHTML='';slots.forEach(t=>{const d=document.createElement('div');d.className='slot '+(bookings[t]?'booked':'');d.innerHTML=bookings[t]?`<b>${t} 🔴 Закажано</b>${bookings[t].name}<br><small>${bookings[t].service} · ${bookings[t].price} ден</small>`:`<b>${t} 🟢 Слободно</b><small>Слободен термин</small>`;el.appendChild(d)});document.getElementById('booked').textContent=Object.keys(bookings).length;document.getElementById('free').textContent=slots.length-Object.keys(bookings).length}render();
-</script></body></html>
+
+// ===============================
+// SUPABASE
+// ===============================
+
+const SUPABASE_URL = "https://tddghbnzkytkicrevfkz.supabase.co";
+
+const SUPABASE_KEY = "sb_publishable_a1rBONP2tfAp-OBDq1IIJA_1CFKU51_";
+
+const supabaseClient = window.supabase.createClient(
+  SUPABASE_URL,
+  SUPABASE_KEY
+);
+
+
+// ===============================
+// SETTINGS
+// ===============================
+
+const BUSINESS_ID = "26efc4ee-e778-4d7d-9631-ca...";
+const BOOKING_DATE = "2026-09-17";
+
+const OPEN_HOUR = 10;
+const CLOSE_HOUR = 20;
+
+
+// ===============================
+// LOAD DASHBOARD
+// ===============================
+
+async function loadDashboard(){
+
+  try {
+
+    document.getElementById("error").innerHTML = "";
+
+    // Get bookings
+    const { data: bookings, error: bookingsError } =
+      await supabaseClient
+        .from("bookings")
+        .select("*")
+        .eq("booking_date", BOOKING_DATE);
+
+    if(bookingsError) throw bookingsError;
+
+
+    // Get customers
+    const { data: customers, error: customersError } =
+      await supabaseClient
+        .from("customers")
+        .select("*");
+
+    if(customersError) throw customersError;
+
+
+    // Get services
+    const { data: services, error: servicesError } =
+      await supabaseClient
+        .from("services")
+        .select("*")
+        .order("price");
+
+    if(servicesError) throw servicesError;
+
+
+    renderStats(bookings || [], customers || []);
+    renderSlots(bookings || [], services || []);
+    renderServices(services || []);
+
+  } catch(error){
+
+    console.error(error);
+
+    document.getElementById("error").innerHTML =
+      `<div class="error">
+        ❌ Не успеав да ги вчитам податоците од Supabase.<br>
+        <small>${error.message || error}</small>
+      </div>`;
+
+  }
+}
+
+
+// ===============================
+// STATS
+// ===============================
+
+function renderStats(bookings, customers){
+
+  const activeBookings = bookings.filter(
+    b => !b.status || b.status === "confirmed"
+  );
+
+  document.getElementById("booked").textContent =
+    activeBookings.length;
+
+  const totalSlots = (CLOSE_HOUR - OPEN_HOUR) * 2;
+
+  document.getElementById("free").textContent =
+    Math.max(0, totalSlots - activeBookings.length);
+
+  document.getElementById("customers").textContent =
+    customers.length;
+}
+
+
+// ===============================
+// SLOTS
+// ===============================
+
+function renderSlots(bookings, services){
+
+  const slotsEl = document.getElementById("slots");
+
+  slotsEl.innerHTML = "";
+
+  const bookingMap = {};
+
+  bookings.forEach(booking => {
+
+    let time = booking.start_time;
+
+    if(time){
+      time = time.substring(0,5);
+      bookingMap[time] = booking;
+    }
+
+  });
+
+
+  for(let hour = OPEN_HOUR; hour < CLOSE_HOUR; hour++){
+
+    for(let minute of [0,30]){
+
+      const time =
+        String(hour).padStart(2,"0") +
+        ":" +
+        String(minute).padStart(2,"0");
+
+      const booking = bookingMap[time];
+
+      const slot = document.createElement("div");
+
+      slot.className =
+        "slot" + (booking ? " booked" : "");
+
+      if(booking){
+
+        let serviceName = "Резервација";
+
+        const service = services.find(
+          s => s.id === booking.service_id
+        );
+
+        if(service){
+          serviceName = service.name;
+        }
+
+        slot.innerHTML = `
+          <div class="time">${time}</div>
+          <div class="status">ЗАФАТЕНО</div>
+          <div class="booking-info">
+            👤 ${booking.customer_id ? "Клиент" : "Клиент"}<br>
+            ✂️ ${serviceName}
+          </div>
+        `;
+
+      } else {
+
+        slot.innerHTML = `
+          <div class="time">${time}</div>
+          <div class="status">СЛОБОДНО</div>
+        `;
+
+      }
+
+      slotsEl.appendChild(slot);
+
+    }
+
+  }
+}
+
+
+// ===============================
+// SERVICES
+// ===============================
+
+function renderServices(services){
+
+  const servicesEl =
+    document.getElementById("services");
+
+  servicesEl.innerHTML = "";
+
+  if(!services.length){
+
+    servicesEl.innerHTML =
+      `<div class="muted">Нема внесени услуги.</div>`;
+
+    return;
+  }
+
+  services.forEach(service => {
+
+    const div = document.createElement("div");
+
+    div.className = "service";
+
+    div.innerHTML = `
+      <span>${service.name}</span>
+      <b>${service.price} ден</b>
+    `;
+
+    servicesEl.appendChild(div);
+
+  });
+}
+
+
+// ===============================
+// START
+// ===============================
+
+loadDashboard();
+
+</script>
+
+</body>
+</html>
