@@ -237,7 +237,7 @@ async function loadDashboard(){
     const { data: bookings, error: bookingsError } =
       await supabaseClient
         .from("bookings")
-        .select("*")
+        .select("*, customers(name)")
         .eq("booking_date", BOOKING_DATE);
 
     if(bookingsError) throw bookingsError;
@@ -359,7 +359,7 @@ function renderSlots(bookings, services){
           <div class="time">${time}</div>
           <div class="status">ЗАФАТЕНО</div>
           <div class="booking-info">
-            👤 ${booking.customer_id ? "Клиент" : "Клиент"}<br>
+            👤 ${booking.customers?.name || "Клиент"}<br>
             ✂️ ${serviceName}
           </div>
         `;
