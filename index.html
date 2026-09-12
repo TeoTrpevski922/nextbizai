@@ -263,7 +263,7 @@ async function loadDashboard(){
 
 
     renderStats(bookings || [], customers || []);
-    renderSlots(bookings || [], services || []);
+    renderSlots(bookings || [], services || [], customers || [])
     renderServices(services || []);
 
   } catch(error){
@@ -307,7 +307,7 @@ function renderStats(bookings, customers){
 // SLOTS
 // ===============================
 
-function renderSlots(bookings, services){
+function renderSlots(bookings, services, customers){
 
   const slotsEl = document.getElementById("slots");
 
@@ -316,7 +316,10 @@ function renderSlots(bookings, services){
   const bookingMap = {};
 
   bookings.forEach(booking => {
-
+    
+const customer = customers.find(
+  c => c.id === booking.customer_id
+);
     let time = booking.start_time;
 
     if(time){
@@ -359,7 +362,7 @@ function renderSlots(bookings, services){
           <div class="time">${time}</div>
           <div class="status">ЗАФАТЕНО</div>
           <div class="booking-info">
-            👤 ${booking.customers?.name || "Клиент"}<br>
+            👤 ${customer?.name || "Клиент"}<br>
             ✂️ ${serviceName}
           </div>
         `;
