@@ -1,433 +1,1431 @@
 <!DOCTYPE html>
 <html lang="mk">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NextBizAI - Davor Cut</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NextBizAI - Davor Cut</title>
 
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
-<style>
-*{box-sizing:border-box}
-body{
-  margin:0;
-  font-family:Arial,sans-serif;
-  background:#f5f7fb;
-  color:#171717;
-}
-header{
-  height:64px;
-  background:#111827;
-  color:white;
-  display:flex;
-  align-items:center;
-  padding:0 24px;
-  font-size:20px;
-  font-weight:700;
-}
-header span{
-  opacity:.6;
-  font-size:13px;
-  margin-left:10px;
-}
-.wrap{
-  max-width:1200px;
-  margin:24px auto;
-  padding:0 20px;
-}
-.stats{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:14px;
-  margin-bottom:24px;
-}
-.card{
-  background:white;
-  border:1px solid #e5e7eb;
-  border-radius:14px;
-  padding:18px;
-  box-shadow:0 4px 14px #00000008;
-}
-.muted{
-  color:#6b7280;
-  font-size:13px;
-}
-.value{
-  font-size:27px;
-  font-weight:800;
-  margin-top:8px;
-}
-.layout{
-  display:grid;
-  grid-template-columns:1fr 360px;
-  gap:18px;
-}
-.day{
-  margin-bottom:15px;
-}
-.day h2{
-  margin:0 0 6px;
-  font-size:20px;
-}
-.slots{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:10px;
-}
-.slot{
-  padding:14px;
-  border:1px solid #dbe3ef;
-  border-radius:10px;
-  background:#effaf2;
-}
-.slot.booked{
-  background:#fff1f2;
-  border-color:#fecdd3;
-}
-.time{
-  font-weight:800;
-}
-.status{
-  font-size:12px;
-  margin-top:4px;
-  color:#16a34a;
-}
-.booked .status{
-  color:#dc2626;
-}
-.booking-info{
-  margin-top:8px;
-  font-size:13px;
-}
-.services{
-  display:grid;
-  gap:10px;
-}
-.service{
-  display:flex;
-  justify-content:space-between;
-  padding:11px 0;
-  border-bottom:1px solid #eee;
-}
-button{
-  border:0;
-  background:#111827;
-  color:white;
-  border-radius:9px;
-  padding:11px 15px;
-  cursor:pointer;
-  font-weight:700;
-}
-.loading{
-  padding:25px;
-  text-align:center;
-  color:#6b7280;
-}
-.error{
-  background:#fff1f2;
-  border:1px solid #fecdd3;
-  color:#b91c1c;
-  padding:15px;
-  border-radius:10px;
-  margin-bottom:20px;
-}
-@media(max-width:800px){
-  .stats{grid-template-columns:repeat(2,1fr)}
-  .layout{grid-template-columns:1fr}
-}
-</style>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f5f7fb;
+      color: #111827;
+    }
+
+    .header {
+      background: #111827;
+      color: white;
+      padding: 22px 35px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .header h1 {
+      margin: 0;
+      font-size: 24px;
+    }
+
+    .header p {
+      margin: 5px 0 0;
+      color: #9ca3af;
+      font-size: 14px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 25px;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .topbar h2 {
+      margin: 0;
+      font-size: 22px;
+    }
+
+    button {
+      border: none;
+      cursor: pointer;
+      border-radius: 8px;
+      padding: 11px 18px;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    .primary-btn {
+      background: #111827;
+      color: white;
+    }
+
+    .primary-btn:hover {
+      background: #1f2937;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+      margin-bottom: 25px;
+    }
+
+    .stat {
+      background: white;
+      border-radius: 12px;
+      padding: 20px;
+      border: 1px solid #e5e7eb;
+    }
+
+    .stat-title {
+      font-size: 13px;
+      color: #6b7280;
+      margin-bottom: 8px;
+    }
+
+    .stat-value {
+      font-size: 25px;
+      font-weight: bold;
+    }
+
+    .card {
+      background: white;
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      padding: 25px;
+      margin-bottom: 25px;
+    }
+
+    .card h3 {
+      margin-top: 0;
+      margin-bottom: 20px;
+    }
+
+    .date-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    input,
+    select {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #d1d5db;
+      border-radius: 8px;
+      font-size: 14px;
+      background: white;
+    }
+
+    .date-input {
+      width: auto;
+      min-width: 180px;
+    }
+
+    .slots {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 12px;
+    }
+
+    .slot {
+      border-radius: 10px;
+      padding: 15px;
+      border: 1px solid #e5e7eb;
+      min-height: 105px;
+    }
+
+    .slot.free {
+      background: #f0fdf4;
+      border-color: #bbf7d0;
+    }
+
+    .slot.booked {
+      background: #fff7ed;
+      border-color: #fed7aa;
+    }
+
+    .slot-time {
+      font-size: 17px;
+      font-weight: bold;
+      margin-bottom: 7px;
+    }
+
+    .slot-status {
+      font-size: 12px;
+      margin-bottom: 8px;
+    }
+
+    .slot-client {
+      font-weight: bold;
+      font-size: 13px;
+    }
+
+    .slot-service {
+      font-size: 12px;
+      color: #6b7280;
+      margin-top: 4px;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+    }
+
+    .service {
+      border: 1px solid #e5e7eb;
+      border-radius: 10px;
+      padding: 18px;
+    }
+
+    .service-name {
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+
+    .service-price {
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .modal-bg {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.55);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      z-index: 1000;
+    }
+
+    .modal-bg.show {
+      display: flex;
+    }
+
+    .modal {
+      width: 100%;
+      max-width: 520px;
+      background: white;
+      border-radius: 14px;
+      padding: 25px;
+      max-height: 90vh;
+      overflow-y: auto;
+    }
+
+    .modal h2 {
+      margin-top: 0;
+      margin-bottom: 20px;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 13px;
+      font-weight: bold;
+      margin-bottom: 7px;
+    }
+
+    .modal-buttons {
+      display: flex;
+      gap: 10px;
+      justify-content: flex-end;
+      margin-top: 20px;
+    }
+
+    .cancel-btn {
+      background: #e5e7eb;
+      color: #111827;
+    }
+
+    .message {
+      padding: 12px;
+      border-radius: 8px;
+      margin-bottom: 15px;
+      display: none;
+      font-size: 14px;
+    }
+
+    .message.success {
+      display: block;
+      background: #dcfce7;
+      color: #166534;
+    }
+
+    .message.error {
+      display: block;
+      background: #fee2e2;
+      color: #991b1b;
+    }
+
+    .loading {
+      text-align: center;
+      padding: 30px;
+      color: #6b7280;
+    }
+
+    @media (max-width: 900px) {
+      .stats {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .slots {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .services {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .header {
+        padding: 18px;
+      }
+
+      .container {
+        padding: 0 12px;
+      }
+
+      .stats {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .slots {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .services {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<header>
-  NextBizAI
-  <span>· Davor Cut Dashboard</span>
-</header>
-
-<div class="wrap">
-
-  <div id="error"></div>
-
-  <section class="stats">
-    <div class="card">
-      <div class="muted">Закажани денес</div>
-      <div class="value" id="booked">-</div>
+  <div class="header">
+    <div>
+      <h1>NextBizAI</h1>
+      <p>Davor Cut · Business Dashboard</p>
     </div>
+  </div>
 
-    <div class="card">
-      <div class="muted">Слободни слотови</div>
-      <div class="value" id="free">-</div>
-    </div>
+  <div class="container">
 
-    <div class="card">
-      <div class="muted">Вкупно клиенти</div>
-      <div class="value" id="customers">-</div>
-    </div>
-
-    <div class="card">
-      <div class="muted">Работно време</div>
-      <div class="value">10:00–20:00</div>
-    </div>
-  </section>
-
-  <div class="layout">
-
-    <main class="card">
-      <div class="day">
-        <h2>📅 Четврток</h2>
-        <div class="muted">17.09.2026 · слотови на 30 минути</div>
+    <div class="topbar">
+      <div>
+        <h2>Dashboard</h2>
       </div>
 
-      <div id="slots" class="slots">
-        <div class="loading">Ги вчитувам податоците...</div>
-      </div>
-    </main>
+      <button class="primary-btn" onclick="openBookingModal()">
+        + Ново закажување
+      </button>
+    </div>
 
-    <aside class="card">
-      <h2>Услуги</h2>
-      <div class="muted" style="margin-bottom:14px">Davor Cut</div>
+    <div id="message" class="message"></div>
+
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-title">Закажани на денот</div>
+        <div class="stat-value" id="bookedCount">0</div>
+      </div>
+
+      <div class="stat">
+        <div class="stat-title">Слободни слотови</div>
+        <div class="stat-value" id="freeCount">0</div>
+      </div>
+
+      <div class="stat">
+        <div class="stat-title">Вкупно клиенти</div>
+        <div class="stat-value" id="customerCount">0</div>
+      </div>
+
+      <div class="stat">
+        <div class="stat-title">Работно време</div>
+        <div class="stat-value">10:00–20:00</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="date-row">
+        <h3 id="scheduleTitle">Распоред</h3>
+
+        <input
+          type="date"
+          id="selectedDate"
+          class="date-input"
+          onchange="loadSchedule()"
+        >
+      </div>
+
+      <div id="slots" class="loading">
+        Вчитување...
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Услуги и цени</h3>
 
       <div id="services" class="services">
-        <div class="loading">Ги вчитувам услугите...</div>
+        <div class="loading">Вчитување...</div>
       </div>
-    </aside>
+    </div>
 
   </div>
-</div>
+
+
+  <!-- BOOKING MODAL -->
+
+  <div class="modal-bg" id="bookingModal">
+
+    <div class="modal">
+
+      <h2>Ново закажување</h2>
+
+      <div id="modalMessage" class="message"></div>
+
+      <div class="form-group">
+        <label>Име и презиме</label>
+        <input
+          type="text"
+          id="customerName"
+          placeholder="Пример: Петар Петров"
+        >
+      </div>
+
+      <div class="form-group">
+        <label>Телефон</label>
+        <input
+          type="text"
+          id="customerPhone"
+          placeholder="Пример: 070123456"
+        >
+      </div>
+
+      <div class="form-group">
+        <label>Датум</label>
+        <input
+          type="date"
+          id="bookingDate"
+          onchange="loadAvailableTimes()"
+        >
+      </div>
+
+      <div class="form-group">
+        <label>Услуга</label>
+        <select
+          id="bookingService"
+          onchange="loadAvailableTimes()"
+        >
+          <option value="">Избери услуга</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Слободен термин</label>
+
+        <select id="bookingTime">
+          <option value="">Прво избери датум и услуга</option>
+        </select>
+      </div>
+
+      <div class="modal-buttons">
+
+        <button
+          class="cancel-btn"
+          onclick="closeBookingModal()"
+        >
+          Откажи
+        </button>
+
+        <button
+          class="primary-btn"
+          onclick="createBooking()"
+        >
+          Зачувај закажување
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
 
 <script>
 
-// ===============================
-// SUPABASE
-// ===============================
+  // =========================
+  // SUPABASE
+  // =========================
 
-const SUPABASE_URL = "https://tddghbnzkytkicrevfkz.supabase.co";
+  const SUPABASE_URL =
+    "https://tddghbnzkytkicrevfkz.supabase.co";
 
-const SUPABASE_KEY = "sb_publishable_a1rBONP2tfAp-OBDq1IIJA_1CFKU51_";
+  const SUPABASE_KEY =
+    "sb_publishable_a1rBONP2tfAp-OBDq1IIJA_1CFKU51_";
 
-const supabaseClient = window.supabase.createClient(
-  SUPABASE_URL,
-  SUPABASE_KEY
-);
-
-
-// ===============================
-// SETTINGS
-// ===============================
-
-const BUSINESS_ID = "26efc4ee-e778-4d7d-9631-ca...";
-const BOOKING_DATE = "2026-09-17";
-
-const OPEN_HOUR = 10;
-const CLOSE_HOUR = 20;
+  const supabaseClient =
+    window.supabase.createClient(
+      SUPABASE_URL,
+      SUPABASE_KEY
+    );
 
 
-// ===============================
-// LOAD DASHBOARD
-// ===============================
+  // =========================
+  // GLOBAL DATA
+  // =========================
 
-async function loadDashboard(){
-
-  try {
-
-    document.getElementById("error").innerHTML = "";
-
-    // Get bookings
-    const { data: bookings, error: bookingsError } =
-      await supabaseClient
-        .from("bookings")
-        .select("*, customers(name)")
-        .eq("booking_date", BOOKING_DATE);
-
-    if(bookingsError) throw bookingsError;
+  let business = null;
+  let services = [];
+  let customers = [];
+  let bookings = [];
 
 
-    // Get customers
-    const { data: customers, error: customersError } =
-      await supabaseClient
-        .from("customers")
-        .select("*");
+  // =========================
+  // DATE
+  // =========================
 
-    if(customersError) throw customersError;
+  const today = new Date();
 
-
-    // Get services
-    const { data: services, error: servicesError } =
-      await supabaseClient
-        .from("services")
-        .select("*")
-        .order("price");
-
-    if(servicesError) throw servicesError;
+  const todayString =
+    today.getFullYear() +
+    "-" +
+    String(today.getMonth() + 1).padStart(2, "0") +
+    "-" +
+    String(today.getDate()).padStart(2, "0");
 
 
-    renderStats(bookings || [], customers || []);
-    renderSlots(bookings || [], services || [], customers || [])
-    renderServices(services || []);
+  document.getElementById("selectedDate").value =
+    "2026-09-17";
 
-  } catch(error){
-
-    console.error(error);
-
-    document.getElementById("error").innerHTML =
-      `<div class="error">
-        ❌ Не успеав да ги вчитам податоците од Supabase.<br>
-        <small>${error.message || error}</small>
-      </div>`;
-
-  }
-}
+  document.getElementById("bookingDate").value =
+    "2026-09-17";
 
 
-// ===============================
-// STATS
-// ===============================
+  // =========================
+  // LOAD EVERYTHING
+  // =========================
 
-function renderStats(bookings, customers){
+  async function loadData() {
 
-  const activeBookings = bookings.filter(
-    b => !b.status || b.status === "confirmed"
-  );
+    try {
 
-  document.getElementById("booked").textContent =
-    activeBookings.length;
+      // BUSINESS
 
-  const totalSlots = (CLOSE_HOUR - OPEN_HOUR) * 2;
+      const businessResult =
+        await supabaseClient
+          .from("businesses")
+          .select("*")
+          .eq("name", "Davor Cut")
+          .limit(1)
+          .single();
 
-  document.getElementById("free").textContent =
-    Math.max(0, totalSlots - activeBookings.length);
+      if (businessResult.error) {
+        throw businessResult.error;
+      }
 
-  document.getElementById("customers").textContent =
-    customers.length;
-}
+      business = businessResult.data;
 
 
-// ===============================
-// SLOTS
-// ===============================
+      // SERVICES
 
-function renderSlots(bookings, services, customers){
+      const servicesResult =
+        await supabaseClient
+          .from("services")
+          .select("*")
+          .eq("business_id", business.id)
+          .order("price", { ascending: true });
 
-  const slotsEl = document.getElementById("slots");
+      if (servicesResult.error) {
+        throw servicesResult.error;
+      }
 
-  slotsEl.innerHTML = "";
+      services = servicesResult.data || [];
 
-  const bookingMap = {};
 
-  bookings.forEach(booking => {
-    
-const customer = customers.find(
-  c => c.id === booking.customer_id
-);
-    let time = booking.start_time;
+      // CUSTOMERS
 
-    if(time){
-      time = time.substring(0,5);
-      bookingMap[time] = booking;
+      const customersResult =
+        await supabaseClient
+          .from("customers")
+          .select("*")
+          .eq("business_id", business.id);
+
+      if (customersResult.error) {
+        throw customersResult.error;
+      }
+
+      customers = customersResult.data || [];
+
+
+      // BOOKINGS
+
+      const bookingsResult =
+        await supabaseClient
+          .from("bookings")
+          .select("*")
+          .eq("business_id", business.id);
+
+      if (bookingsResult.error) {
+        throw bookingsResult.error;
+      }
+
+      bookings = bookingsResult.data || [];
+
+
+      renderServices();
+      populateBookingServices();
+      loadSchedule();
+
+    } catch (error) {
+
+      console.error(error);
+
+      showMessage(
+        "Грешка при вчитување на податоците: " +
+        (error.message || "Unknown error"),
+        "error"
+      );
+
     }
 
-  });
+  }
 
 
-  for(let hour = OPEN_HOUR; hour < CLOSE_HOUR; hour++){
+  // =========================
+  // TIME SLOTS
+  // =========================
 
-    for(let minute of [0,30]){
+  function generateTimeSlots() {
+
+    const slots = [];
+
+    for (
+      let minutes = 10 * 60;
+      minutes < 20 * 60;
+      minutes += 30
+    ) {
+
+      const hours =
+        Math.floor(minutes / 60);
+
+      const mins =
+        minutes % 60;
 
       const time =
-        String(hour).padStart(2,"0") +
+        String(hours).padStart(2, "0") +
         ":" +
-        String(minute).padStart(2,"0");
+        String(mins).padStart(2, "0") +
+        ":00";
 
-      const booking = bookingMap[time];
-      
-const customer = booking
-  ? customers.find(c => c.id === booking.customer_id)
-  : null;
-      const slot = document.createElement("div");
+      slots.push(time);
+    }
 
-      slot.className =
-        "slot" + (booking ? " booked" : "");
+    return slots;
+  }
 
-      if(booking){
 
-        let serviceName = "Резервација";
+  function displayTime(time) {
 
-        const service = services.find(
-          s => s.id === booking.service_id
+    return time.substring(0, 5);
+  }
+
+
+  // =========================
+  // LOAD SCHEDULE
+  // =========================
+
+  function loadSchedule() {
+
+    const selectedDate =
+      document.getElementById("selectedDate").value;
+
+    const slotsContainer =
+      document.getElementById("slots");
+
+    document.getElementById("scheduleTitle").textContent =
+      "Распоред · " + formatDate(selectedDate);
+
+
+    const dayBookings =
+      bookings.filter(
+        booking =>
+          booking.booking_date === selectedDate &&
+          booking.status !== "cancelled"
+      );
+
+
+    const timeSlots =
+      generateTimeSlots();
+
+
+    let booked = 0;
+    let free = 0;
+
+
+    let html = "";
+
+
+    timeSlots.forEach(time => {
+
+      const booking =
+        dayBookings.find(
+          b => b.start_time === time
         );
 
-        if(service){
-          serviceName = service.name;
-        }
 
-        slot.innerHTML = `
-          <div class="time">${time}</div>
-          <div class="status">ЗАФАТЕНО</div>
-          <div class="booking-info">
-            👤 ${customer?.name || "Клиент"}<br>
-            ✂️ ${serviceName}
+      if (booking) {
+
+        booked++;
+
+        const customer =
+          customers.find(
+            c => c.id === booking.customer_id
+          );
+
+
+        const service =
+          services.find(
+            s => s.id === booking.service_id
+          );
+
+
+        html += `
+          <div class="slot booked">
+
+            <div class="slot-time">
+              ${displayTime(time)}
+            </div>
+
+            <div class="slot-status">
+              🔴 Закажано
+            </div>
+
+            <div class="slot-client">
+              ${escapeHtml(
+                customer
+                  ? customer.name
+                  : "Непознат клиент"
+              )}
+            </div>
+
+            <div class="slot-service">
+              ${escapeHtml(
+                service
+                  ? service.name
+                  : "Услуга"
+              )}
+              ${
+                service
+                  ? " · " + service.price + " ден"
+                  : ""
+              }
+            </div>
+
           </div>
         `;
 
       } else {
 
-        slot.innerHTML = `
-          <div class="time">${time}</div>
-          <div class="status">СЛОБОДНО</div>
+        free++;
+
+        html += `
+          <div
+            class="slot free"
+            style="cursor:pointer"
+            onclick="openBookingWithSlot('${selectedDate}', '${time.substring(0,5)}')"
+          >
+
+            <div class="slot-time">
+              ${displayTime(time)}
+            </div>
+
+            <div class="slot-status">
+              🟢 Слободно
+            </div>
+
+            <div class="slot-client">
+              Слободен термин
+            </div>
+
+            <div class="slot-service">
+              Кликни за закажување
+            </div>
+
+          </div>
         `;
 
       }
 
-      slotsEl.appendChild(slot);
+    });
+
+
+    slotsContainer.className = "slots";
+    slotsContainer.innerHTML = html;
+
+
+    document.getElementById("bookedCount").textContent =
+      booked;
+
+    document.getElementById("freeCount").textContent =
+      free;
+
+    document.getElementById("customerCount").textContent =
+      customers.length;
+
+  }
+
+
+  // =========================
+  // SERVICES
+  // =========================
+
+  function renderServices() {
+
+    const container =
+      document.getElementById("services");
+
+
+    if (!services.length) {
+
+      container.innerHTML =
+        "<div>Нема внесени услуги.</div>";
+
+      return;
+    }
+
+
+    container.innerHTML =
+      services.map(service => `
+
+        <div class="service">
+
+          <div class="service-name">
+            ${escapeHtml(service.name)}
+          </div>
+
+          <div class="service-price">
+            ${service.price} ден
+          </div>
+
+        </div>
+
+      `).join("");
+
+  }
+
+
+  function populateBookingServices() {
+
+    const select =
+      document.getElementById("bookingService");
+
+
+    select.innerHTML =
+      '<option value="">Избери услуга</option>' +
+      services.map(service => `
+        <option value="${service.id}">
+          ${escapeHtml(service.name)}
+          · ${service.price} ден
+        </option>
+      `).join("");
+
+  }
+
+
+  // =========================
+  // MODAL
+  // =========================
+
+  function openBookingModal() {
+
+    document
+      .getElementById("bookingModal")
+      .classList.add("show");
+
+    document
+      .getElementById("bookingDate")
+      .value =
+      document.getElementById("selectedDate").value;
+
+    document.getElementById("modalMessage").className =
+      "message";
+
+    document.getElementById("modalMessage").textContent =
+      "";
+
+    loadAvailableTimes();
+
+  }
+
+
+  function closeBookingModal() {
+
+    document
+      .getElementById("bookingModal")
+      .classList.remove("show");
+
+  }
+
+
+  function openBookingWithSlot(date, time) {
+
+    openBookingModal();
+
+    document.getElementById("bookingDate").value =
+      date;
+
+    loadAvailableTimes();
+
+    setTimeout(() => {
+
+      document.getElementById("bookingTime").value =
+        time;
+
+    }, 100);
+
+  }
+
+
+  // =========================
+  // AVAILABLE TIMES
+  // =========================
+
+  function loadAvailableTimes() {
+
+    const date =
+      document.getElementById("bookingDate").value;
+
+    const timeSelect =
+      document.getElementById("bookingTime");
+
+
+    if (!date) {
+
+      timeSelect.innerHTML =
+        '<option value="">Избери датум</option>';
+
+      return;
+    }
+
+
+    const dayBookings =
+      bookings.filter(
+        booking =>
+          booking.booking_date === date &&
+          booking.status !== "cancelled"
+      );
+
+
+    const allSlots =
+      generateTimeSlots();
+
+
+    const freeSlots =
+      allSlots.filter(
+        time =>
+          !dayBookings.some(
+            booking =>
+              booking.start_time === time
+          )
+      );
+
+
+    if (!freeSlots.length) {
+
+      timeSelect.innerHTML =
+        '<option value="">Нема слободни термини</option>';
+
+      return;
+    }
+
+
+    timeSelect.innerHTML =
+      '<option value="">Избери термин</option>' +
+
+      freeSlots.map(time => `
+        <option value="${time.substring(0,5)}">
+          ${displayTime(time)}
+        </option>
+      `).join("");
+
+  }
+
+
+  // =========================
+  // CREATE BOOKING
+  // =========================
+
+  async function createBooking() {
+
+    const name =
+      document.getElementById("customerName").value.trim();
+
+    const phone =
+      document.getElementById("customerPhone").value.trim();
+
+    const date =
+      document.getElementById("bookingDate").value;
+
+    const serviceId =
+      document.getElementById("bookingService").value;
+
+    const time =
+      document.getElementById("bookingTime").value;
+
+
+    if (!name) {
+
+      showModalMessage(
+        "Внеси име и презиме.",
+        "error"
+      );
+
+      return;
+    }
+
+
+    if (!date) {
+
+      showModalMessage(
+        "Избери датум.",
+        "error"
+      );
+
+      return;
+    }
+
+
+    if (!serviceId) {
+
+      showModalMessage(
+        "Избери услуга.",
+        "error"
+      );
+
+      return;
+    }
+
+
+    if (!time) {
+
+      showModalMessage(
+        "Избери слободен термин.",
+        "error"
+      );
+
+      return;
+    }
+
+
+    const startTime =
+      time + ":00";
+
+
+    // CHECK IF SLOT IS ALREADY BOOKED
+
+    const existingBooking =
+      bookings.find(
+        booking =>
+          booking.booking_date === date &&
+          booking.start_time === startTime &&
+          booking.status !== "cancelled"
+      );
+
+
+    if (existingBooking) {
+
+      showModalMessage(
+        "Овој термин во меѓувреме е веќе закажан.",
+        "error"
+      );
+
+      await refreshData();
+
+      return;
+    }
+
+
+    try {
+
+      // =========================
+      // FIND CUSTOMER
+      // =========================
+
+      let customer =
+        customers.find(
+          c =>
+            c.name.toLowerCase() ===
+            name.toLowerCase()
+        );
+
+
+      // =========================
+      // CREATE CUSTOMER
+      // =========================
+
+      if (!customer) {
+
+        const customerResult =
+          await supabaseClient
+            .from("customers")
+            .insert({
+              business_id: business.id,
+              name: name,
+              phone: phone || null
+            })
+            .select()
+            .single();
+
+
+        if (customerResult.error) {
+          throw customerResult.error;
+        }
+
+
+        customer =
+          customerResult.data;
+
+
+        customers.push(customer);
+
+      }
+
+
+      // =========================
+      // END TIME
+      // =========================
+
+      const endTime =
+        calculateEndTime(time);
+
+
+      // =========================
+      // CREATE BOOKING
+      // =========================
+
+      const bookingResult =
+        await supabaseClient
+          .from("bookings")
+          .insert({
+
+            business_id: business.id,
+
+            customer_id: customer.id,
+
+            service_id: serviceId,
+
+            booking_date: date,
+
+            start_time: startTime,
+
+            end_time: endTime,
+
+            status: "confirmed",
+
+            source: "dashboard"
+
+          })
+          .select()
+          .single();
+
+
+      if (bookingResult.error) {
+
+        // PostgreSQL duplicate key
+
+        if (
+          bookingResult.error.code === "23505"
+        ) {
+
+          showModalMessage(
+            "Овој термин е веќе закажан. Избери друг.",
+            "error"
+          );
+
+          await refreshData();
+
+          return;
+        }
+
+
+        throw bookingResult.error;
+
+      }
+
+
+      bookings.push(
+        bookingResult.data
+      );
+
+
+      // =========================
+      // SUCCESS
+      // =========================
+
+      showModalMessage(
+        "Закажувањето е успешно креирано! ✅",
+        "success"
+      );
+
+
+      document.getElementById("customerName").value =
+        "";
+
+      document.getElementById("customerPhone").value =
+        "";
+
+
+      setTimeout(() => {
+
+        closeBookingModal();
+
+        document.getElementById("selectedDate").value =
+          date;
+
+        loadSchedule();
+
+        showMessage(
+          "Успешно закажување за " +
+          name +
+          " во " +
+          time +
+          ".",
+          "success"
+        );
+
+      }, 800);
+
+
+    } catch (error) {
+
+      console.error(error);
+
+      showModalMessage(
+        "Грешка: " +
+        (error.message || "Неуспешно закажување."),
+        "error"
+      );
 
     }
 
   }
-}
 
 
-// ===============================
-// SERVICES
-// ===============================
+  // =========================
+  // CALCULATE END TIME
+  // =========================
 
-function renderServices(services){
+  function calculateEndTime(time) {
 
-  const servicesEl =
-    document.getElementById("services");
+    const parts =
+      time.split(":");
 
-  servicesEl.innerHTML = "";
+    let hours =
+      parseInt(parts[0]);
 
-  if(!services.length){
+    let minutes =
+      parseInt(parts[1]);
 
-    servicesEl.innerHTML =
-      `<div class="muted">Нема внесени услуги.</div>`;
 
-    return;
+    minutes += 30;
+
+
+    if (minutes >= 60) {
+
+      hours +=
+        Math.floor(minutes / 60);
+
+      minutes =
+        minutes % 60;
+
+    }
+
+
+    return (
+      String(hours).padStart(2, "0") +
+      ":" +
+      String(minutes).padStart(2, "0") +
+      ":00"
+    );
+
   }
 
-  services.forEach(service => {
 
-    const div = document.createElement("div");
+  // =========================
+  // REFRESH DATA
+  // =========================
 
-    div.className = "service";
+  async function refreshData() {
 
-    div.innerHTML = `
-      <span>${service.name}</span>
-      <b>${service.price} ден</b>
-    `;
-
-    servicesEl.appendChild(div);
-
-  });
-}
+    const bookingsResult =
+      await supabaseClient
+        .from("bookings")
+        .select("*")
+        .eq("business_id", business.id);
 
 
-// ===============================
-// START
-// ===============================
+    if (!bookingsResult.error) {
 
-loadDashboard();
+      bookings =
+        bookingsResult.data || [];
+
+    }
+
+
+    const customersResult =
+      await supabaseClient
+        .from("customers")
+        .select("*")
+        .eq("business_id", business.id);
+
+
+    if (!customersResult.error) {
+
+      customers =
+        customersResult.data || [];
+
+    }
+
+
+    loadSchedule();
+
+  }
+
+
+  // =========================
+  // FORMAT DATE
+  // =========================
+
+  function formatDate(dateString) {
+
+    if (!dateString) {
+      return "";
+    }
+
+
+    const date =
+      new Date(dateString + "T00:00:00");
+
+
+    return date.toLocaleDateString(
+      "mk-MK",
+      {
+        weekday: "long",
+        day: "2-digit",
+        month: "2-digit",
+        year: "numeric"
+      }
+    );
+
+  }
+
+
+  // =========================
+  // MESSAGES
+  // =========================
+
+  function showMessage(text, type) {
+
+    const message =
+      document.getElementById("message");
+
+
+    message.textContent =
+      text;
+
+    message.className =
+      "message " + type;
+
+
+    setTimeout(() => {
+
+      message.className =
+        "message";
+
+    }, 5000);
+
+  }
+
+
+  function showModalMessage(text, type) {
+
+    const message =
+      document.getElementById("modalMessage");
+
+
+    message.textContent =
+      text;
+
+    message.className =
+      "message " + type;
+
+  }
+
+
+  // =========================
+  // SECURITY / HTML ESCAPE
+  // =========================
+
+  function escapeHtml(value) {
+
+    if (value === null || value === undefined) {
+      return "";
+    }
+
+
+    return String(value)
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#039;");
+
+  }
+
+
+  // =========================
+  // CLOSE MODAL ON BACKGROUND
+  // =========================
+
+  document
+    .getElementById("bookingModal")
+    .addEventListener("click", function(event) {
+
+      if (event.target === this) {
+        closeBookingModal();
+      }
+
+    });
+
+
+  // =========================
+  // START
+  // =========================
+
+  loadData();
 
 </script>
 
