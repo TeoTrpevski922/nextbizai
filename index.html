@@ -1428,6 +1428,81 @@
   loadData();
 
 </script>
+<!-- CRM / CUSTOMERS -->
 
+<div class="card" style="margin-top:25px;">
+
+  <div style="display:flex;justify-content:space-between;align-items:center;gap:15px;flex-wrap:wrap;margin-bottom:20px;">
+
+    <div>
+      <h3 style="margin:0 0 5px 0;">Клиенти</h3>
+      <div style="font-size:13px;color:#6b7280;">
+        Преглед на клиентите и нивните резервации
+      </div>
+    </div>
+
+    <input
+      id="customerSearch"
+      type="text"
+      placeholder="🔎 Пребарај клиент..."
+      oninput="renderCRM()"
+      style="max-width:260px;"
+    >
+
+  </div>
+
+  <div
+    id="crmStats"
+    style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:20px;"
+  ></div>
+
+  <div id="crmCustomers">
+    Вчитување...
+  </div>
+
+</div>
+
+<!-- CUSTOMER DETAILS MODAL -->
+
+<div
+  id="customerDetailsModal"
+  class="modal-bg"
+  onclick="closeCustomerDetails(event)"
+>
+
+  <div
+    class="modal"
+    onclick="event.stopPropagation()"
+  >
+
+    <h2 id="customerDetailsName">
+      Клиент
+    </h2>
+
+    <div
+      id="customerDetailsInfo"
+      style="margin-bottom:20px;color:#6b7280;"
+    ></div>
+
+    <h3>Историја на резервации</h3>
+
+    <div id="customerBookingHistory">
+      Вчитување...
+    </div>
+
+    <div class="modal-buttons">
+
+      <button
+        class="cancel-btn"
+        onclick="closeCustomerDetails()"
+      >
+        Затвори
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
 </body>
 </html>
