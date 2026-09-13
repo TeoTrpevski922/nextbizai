@@ -1989,5 +1989,277 @@ setTimeout(() => {
   </div>
 
 </div>
+  <!-- NextBizAI AI Chat -->
+<style>
+  #nextbiz-ai-chat {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+  }
+
+  #nextbiz-ai-chat .ai-card {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  }
+
+  #nextbiz-ai-chat .ai-header {
+    background: linear-gradient(135deg, #111827, #1f2937);
+    color: white;
+    padding: 20px 24px;
+  }
+
+  #nextbiz-ai-chat .ai-header-title {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0 0 5px 0;
+  }
+
+  #nextbiz-ai-chat .ai-header-subtitle {
+    font-size: 13px;
+    opacity: 0.75;
+    margin: 0;
+  }
+
+  #nextbiz-ai-chat .ai-messages {
+    height: 360px;
+    overflow-y: auto;
+    padding: 20px;
+    background: #f9fafb;
+  }
+
+  #nextbiz-ai-chat .ai-message {
+    display: flex;
+    margin-bottom: 14px;
+  }
+
+  #nextbiz-ai-chat .ai-message.user {
+    justify-content: flex-end;
+  }
+
+  #nextbiz-ai-chat .ai-bubble {
+    max-width: 75%;
+    padding: 11px 15px;
+    border-radius: 14px;
+    font-size: 14px;
+    line-height: 1.5;
+    white-space: pre-wrap;
+  }
+
+  #nextbiz-ai-chat .ai-message.ai .ai-bubble {
+    background: white;
+    border: 1px solid #e5e7eb;
+    color: #111827;
+  }
+
+  #nextbiz-ai-chat .ai-message.user .ai-bubble {
+    background: #111827;
+    color: white;
+  }
+
+  #nextbiz-ai-chat .ai-input-area {
+    display: flex;
+    gap: 10px;
+    padding: 16px;
+    background: white;
+    border-top: 1px solid #e5e7eb;
+  }
+
+  #nextbiz-ai-chat .ai-input {
+    flex: 1;
+    min-width: 0;
+    padding: 13px 15px;
+    border: 1px solid #d1d5db;
+    border-radius: 12px;
+    outline: none;
+    font-size: 14px;
+  }
+
+  #nextbiz-ai-chat .ai-input:focus {
+    border-color: #111827;
+  }
+
+  #nextbiz-ai-chat .ai-send {
+    border: none;
+    background: #111827;
+    color: white;
+    padding: 0 20px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: 600;
+  }
+
+  #nextbiz-ai-chat .ai-send:hover {
+    opacity: 0.9;
+  }
+
+  #nextbiz-ai-chat .ai-send:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  @media (max-width: 600px) {
+    #nextbiz-ai-chat {
+      padding: 0 12px;
+    }
+
+    #nextbiz-ai-chat .ai-messages {
+      height: 320px;
+    }
+
+    #nextbiz-ai-chat .ai-bubble {
+      max-width: 85%;
+    }
+
+    #nextbiz-ai-chat .ai-send {
+      padding: 0 15px;
+    }
+  }
+</style>
+
+<section id="nextbiz-ai-chat">
+  <div class="ai-card">
+
+    <div class="ai-header">
+      <p class="ai-header-title">🤖 NextBizAI Assistant</p>
+      <p class="ai-header-subtitle">
+        AI customer assistant for Davor Cut
+      </p>
+    </div>
+
+    <div class="ai-messages" id="nextbizAiMessages">
+      <div class="ai-message ai">
+        <div class="ai-bubble">
+          Zdravo! 👋 Jas sum AI asistentot na Davor Cut. Kako mozam da ti pomognam?
+        </div>
+      </div>
+    </div>
+
+    <form class="ai-input-area" id="nextbizAiForm">
+      <input
+        type="text"
+        id="nextbizAiInput"
+        class="ai-input"
+        placeholder="Napishi poraka..."
+        autocomplete="off"
+      />
+
+      <button
+        type="submit"
+        class="ai-send"
+        id="nextbizAiSend"
+      >
+        Prati
+      </button>
+    </form>
+
+  </div>
+</section>
+
+<script>
+(function () {
+
+  const form = document.getElementById("nextbizAiForm");
+  const input = document.getElementById("nextbizAiInput");
+  const messages = document.getElementById("nextbizAiMessages");
+  const sendButton = document.getElementById("nextbizAiSend");
+
+  function addMessage(text, type) {
+    const message = document.createElement("div");
+    message.className = "ai-message " + type;
+
+    const bubble = document.createElement("div");
+    bubble.className = "ai-bubble";
+    bubble.textContent = text;
+
+    message.appendChild(bubble);
+    messages.appendChild(message);
+
+    messages.scrollTop = messages.scrollHeight;
+  }
+
+  function addTypingMessage() {
+    const message = document.createElement("div");
+    message.className = "ai-message ai";
+    message.id = "nextbizAiTyping";
+
+    const bubble = document.createElement("div");
+    bubble.className = "ai-bubble";
+    bubble.textContent = "Pisuvam...";
+
+    message.appendChild(bubble);
+    messages.appendChild(message);
+
+    messages.scrollTop = messages.scrollHeight;
+  }
+
+  function removeTypingMessage() {
+    const typing = document.getElementById("nextbizAiTyping");
+    if (typing) {
+      typing.remove();
+    }
+  }
+
+  form.addEventListener("submit", async function (event) {
+    event.preventDefault();
+
+    const message = input.value.trim();
+
+    if (!message) return;
+
+    addMessage(message, "user");
+
+    input.value = "";
+    input.disabled = true;
+    sendButton.disabled = true;
+
+    addTypingMessage();
+
+    try {
+      const response = await fetch("/api/chat", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          message: message
+        })
+      });
+
+      const data = await response.json();
+
+      removeTypingMessage();
+
+      if (!response.ok) {
+        throw new Error(data.error || "AI request failed");
+      }
+
+      addMessage(
+        data.reply || "Izvini, ne uspeav da odgovoram.",
+        "ai"
+      );
+
+    } catch (error) {
+
+      removeTypingMessage();
+
+      console.error("AI Chat error:", error);
+
+      addMessage(
+        "Izvini, nastana problem pri komunikacijata so AI asistentot.",
+        "ai"
+      );
+
+    } finally {
+      input.disabled = false;
+      sendButton.disabled = false;
+      input.focus();
+    }
+  });
+
+})();
+</script>
 </body>
 </html>
