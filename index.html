@@ -1426,7 +1426,492 @@
   // =========================
 
   loadData();
+// =========================
+// CRM FUNCTIONS
+// =========================
 
+function renderCRM() {
+
+  const container = document.getElementById("crmCustomers");
+  const stats = document.getElementById("crmStats");
+
+  if (!container || !stats) return;
+
+  const searchInput = document.getElementById("customerSearch");
+
+  const search = searchInput
+    ? searchInput.value.trim().toLowerCase()
+    : "";
+
+  const filteredCustomers = customers.filter(customer => {
+
+    const name = (customer.name || "").toLowerCase();
+    const phone = (customer.phone || "").toLowerCase();
+
+    return (
+      !search ||
+      name.includes(search) ||
+      phone.includes(search)
+    );
+
+  });
+
+
+  // =========================
+  // STATS
+  // =========================
+
+  let totalRevenue = 0;
+
+  bookings
+    .filter(b => b.status !== "cancelled")
+    .forEach(booking => {
+
+      const service = services.find(
+        s => s.id === booking.service_id
+      );
+
+      if (service) {
+        totalRevenue += Number(service.price) || 0;
+      }
+
+    });
+
+
+  stats.innerHTML = `
+
+    <div style="
+      background:#f9fafb;
+      border:1px solid #e5e7eb;
+      border-radius:10px;
+      padding:15px;
+    ">
+      <div style="font-size:12px;color:#6b7280;">
+        Вкупно клиенти
+      </div>
+
+      <div style="font-size:23px;font-weight:bold;margin-top:5px;">
+        ${customers.length}
+      </div>
+    </div>
+
+
+    <div style="
+      background:#f9fafb;
+      border:1px solid #e5e7eb;
+      border-radius:10px;
+      padding:15px;
+    ">
+      <div style="font-size:12px;color:#6b7280;">
+        Вкупно резервации
+      </div>
+
+      <div style="font-size:23px;font-weight:bold;margin-top:5px;">
+        ${bookings.filter(b => b.status !== "cancelled").length}
+      </div>
+    </div>
+
+
+    <div style="
+      background:#f9fafb;
+      border:1px solid #e5e7eb;
+      border-radius:10px;
+      padding:15px;
+    ">
+      <div style="font-size:12px;color:#6b7280;">
+        Вкупен приход
+      </div>
+
+      <div style="font-size:23px;font-weight:bold;margin-top:5px;">
+        ${totalRevenue} ден
+      </div>
+    </div>
+
+  `;
+
+
+  // =========================
+  // CUSTOMER LIST
+  // =========================
+
+  if (!filteredCustomers.length) {
+
+    container.innerHTML = `
+      <div style="
+        padding:30px;
+        text-align:center;
+        color:#6b7280;
+      ">
+        Нема пронајдени клиенти.
+      </div>
+    `;
+
+    return;
+  }
+
+
+  let html = `
+
+    <div style="
+      border:1px solid #e5e7eb;
+      border-radius:10px;
+      overflow:hidden;
+    ">
+
+  `;
+
+
+  filteredCustomers.forEach(customer => {
+
+    const customerBookings = bookings.filter(
+      booking =>
+        booking.customer_id === customer.id &&
+        booking.status !== "cancelled"
+    );
+
+
+    let customerRevenue = 0;
+
+    customerBookings.forEach(booking => {
+
+      const service = services.find(
+        s => s.id === booking.service_id
+      );
+
+      if (service) {
+        customerRevenue += Number(service.price) || 0;
+      }
+
+    });
+
+
+    let lastBooking = null;
+
+    customerBookings.forEach(booking => {
+
+      if (
+        !lastBooking ||
+        (
+          booking.booking_date +
+          " " +
+          booking.start_time
+        ) >
+        (
+          lastBooking.booking_date +
+          " " +
+          lastBooking.start_time
+        )
+      ) {
+
+        lastBooking = booking;
+
+      }
+
+    });
+
+
+    html += `
+
+      <div
+        onclick="openCustomerDetails('${customer.id}')"
+        style="
+          display:grid;
+          grid-template-columns:2fr 1.2fr 1fr 1.5fr 90px;
+          gap:15px;
+          align-items:center;
+          padding:16px;
+          border-bottom:1px solid #e5e7eb;
+          cursor:pointer;
+          background:white;
+        "
+        onmouseover="this.style.background='#f9fafb'"
+        onmouseout="this.style.background='white'"
+      >
+
+        <div>
+
+          <div style="font-weight:bold;">
+            ${escapeHtml(customer.name || "Без име")}
+          </div>
+
+          <div style="
+            font-size:12px;
+            color:#6b7280;
+            margin-top:4px;
+          ">
+            ${escapeHtml(customer.phone || "Нема телефон")}
+          </div>
+
+        </div>
+
+
+        <div>
+
+          <div style="
+            font-size:12px;
+            color:#6b7280;
+          ">
+            Резервации
+          </div>
+
+          <div style="font-weight:bold;">
+            ${customerBookings.length}
+          </div>
+
+        </div>
+
+
+        <div>
+
+          <div style="
+            font-size:12px;
+            color:#6b7280;
+          ">
+            Потрошено
+          </div>
+
+          <div style="font-weight:bold;">
+            ${customerRevenue} ден
+          </div>
+
+        </div>
+
+
+        <div>
+
+          <div style="
+            font-size:12px;
+            color:#6b7280;
+          ">
+            Последна посета
+          </div>
+
+          <div style="font-size:13px;font-weight:bold;">
+
+            ${
+              lastBooking
+                ? formatDate(lastBooking.booking_date)
+                : "Нема"
+            }
+
+          </div>
+
+        </div>
+
+
+        <div style="text-align:right;">
+
+          <span style="
+            display:inline-block;
+            padding:7px 10px;
+            background:#111827;
+            color:white;
+            border-radius:7px;
+            font-size:12px;
+            font-weight:bold;
+          ">
+            Детали →
+          </span>
+
+        </div>
+
+      </div>
+
+    `;
+
+  });
+
+
+  html += `</div>`;
+
+  container.innerHTML = html;
+
+}
+
+
+// =========================
+// CUSTOMER DETAILS
+// =========================
+
+function openCustomerDetails(customerId) {
+
+  const customer = customers.find(
+    c => c.id === customerId
+  );
+
+  if (!customer) return;
+
+
+  document
+    .getElementById("customerDetailsModal")
+    .classList.add("show");
+
+
+  document
+    .getElementById("customerDetailsName")
+    .textContent =
+      customer.name || "Клиент";
+
+
+  document
+    .getElementById("customerDetailsInfo")
+    .textContent =
+      customer.phone
+        ? "Телефон: " + customer.phone
+        : "Нема внесен телефон";
+
+
+  const history = bookings
+    .filter(
+      booking =>
+        booking.customer_id === customerId &&
+        booking.status !== "cancelled"
+    )
+    .sort(
+      (a, b) =>
+        (
+          b.booking_date +
+          b.start_time
+        ).localeCompare(
+          a.booking_date +
+          a.start_time
+        )
+    );
+
+
+  const container =
+    document.getElementById(
+      "customerBookingHistory"
+    );
+
+
+  if (!history.length) {
+
+    container.innerHTML = `
+      <div style="
+        padding:20px;
+        background:#f9fafb;
+        border-radius:8px;
+        color:#6b7280;
+      ">
+        Клиентот сè уште нема резервации.
+      </div>
+    `;
+
+    return;
+  }
+
+
+  let html = "";
+
+
+  history.forEach(booking => {
+
+    const service = services.find(
+      s => s.id === booking.service_id
+    );
+
+
+    html += `
+
+      <div style="
+        border:1px solid #e5e7eb;
+        border-radius:9px;
+        padding:15px;
+        margin-bottom:10px;
+      ">
+
+        <div style="
+          font-weight:bold;
+          font-size:16px;
+        ">
+          ${formatDate(booking.booking_date)}
+        </div>
+
+        <div style="
+          margin-top:5px;
+          font-size:14px;
+        ">
+          🕐 ${displayTime(booking.start_time)}
+        </div>
+
+        <div style="
+          margin-top:5px;
+          color:#6b7280;
+          font-size:13px;
+        ">
+          ${escapeHtml(
+            service
+              ? service.name
+              : "Непозната услуга"
+          )}
+
+          ${
+            service
+              ? " · " + service.price + " ден"
+              : ""
+          }
+        </div>
+
+      </div>
+
+    `;
+
+  });
+
+
+  container.innerHTML = html;
+
+}
+
+
+// =========================
+// CLOSE CUSTOMER DETAILS
+// =========================
+
+function closeCustomerDetails(event) {
+
+  if (
+    event &&
+    event.target &&
+    event.target.id !== "customerDetailsModal"
+  ) {
+    return;
+  }
+
+
+  document
+    .getElementById("customerDetailsModal")
+    .classList.remove("show");
+
+}
+
+
+// =========================
+// CONNECT CRM WITH DASHBOARD
+// =========================
+
+const originalLoadScheduleForCRM =
+  loadSchedule;
+
+loadSchedule = function() {
+
+  originalLoadScheduleForCRM();
+
+  renderCRM();
+
+};
+
+
+// =========================
+// INITIAL CRM LOAD
+// =========================
+
+setTimeout(() => {
+
+  renderCRM();
+
+}, 1000);
 </script>
 <!-- CRM / CUSTOMERS -->
 
