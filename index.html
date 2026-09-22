@@ -343,7 +343,13 @@
         + Ново закажување
       </button>
     </div>
-
+<button
+  class="primary-btn"
+  onclick="enablePushNotifications()"
+  style="background:#2563eb;"
+>
+  🔔 Вклучи известувања
+</button>
     <div id="message" class="message"></div>
 
     <div class="stats">
@@ -1912,6 +1918,73 @@ setTimeout(() => {
   renderCRM();
 
 }, 1000);
+setTimeout(() => {
+  renderCRM();
+}, 1000);
+
+
+// =========================
+// PUSH NOTIFICATIONS
+// =========================
+
+async function enablePushNotifications() {
+  try {
+    if (!("serviceWorker" in navigator) || !("PushManager" in window)) {
+      alert("Овој уред не поддржува push известувања.");
+      return;
+    }
+
+    const permission = await Notification.requestPermission();
+
+    if (permission !== "granted") {
+      alert("Известувањата не се дозволени.");
+      return;
+    }
+
+    const registration = await navigator.serviceWorker.register("/sw.js");
+
+    const publicKey =
+      "BObEowSdOgIODnBIa66yFrGR7unIRODUpkV6jG8K3cXY6kZ888DQ7XpRXsRaXTLvnM9SAHIZb-CBEWXFvUaOxno";
+
+    const subscription = await registration.pushManager.subscribe({
+      userVisibleOnly: true,
+      applicationServerKey: urlBase64ToUint8Array(publicKey)
+    });
+
+    const { error } = await supabaseClient
+      .from("push_subscriptions")
+      .insert({
+        subscription: subscription.toJSON()
+      });
+
+    if (error) {
+      console.error("Push subscription error:", error);
+      alert("Не успеавме да ги вклучиме известувањата.");
+      return;
+    }
+
+    alert("🔔 Известувањата се успешно вклучени!");
+
+  } catch (error) {
+    console.error("Push notification error:", error);
+    alert("Настана грешка при вклучување на известувањата.");
+  }
+}
+
+function urlBase64ToUint8Array(base64String) {
+  const padding = "=".repeat((4 - base64String.length % 4) % 4);
+  const base64 = (base64String + padding)
+    .replace(/-/g, "+")
+    .replace(/_/g, "/");
+
+  const rawData = window.atob(base64);
+
+  return Uint8Array.from(
+    [...rawData].map(char => char.charCodeAt(0))
+  );
+}
+
+</script>
 </script>
 <!-- CRM / CUSTOMERS -->
 
