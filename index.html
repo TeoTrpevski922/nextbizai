@@ -1558,7 +1558,20 @@ const businessResult =
   // START
   // =========================
 
-  loadData();
+ async function checkAuth() {
+  const {
+    data: { session }
+  } = await supabaseClient.auth.getSession();
+
+  if (session?.user) {
+    document.getElementById("loginScreen").style.display = "none";
+    await loadData();
+  } else {
+    document.getElementById("loginScreen").style.display = "flex";
+  }
+}
+
+checkAuth();
 // =========================
 // CRM FUNCTIONS
 // =========================
