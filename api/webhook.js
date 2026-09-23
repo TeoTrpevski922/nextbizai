@@ -1,3 +1,5 @@
+import webpush from "web-push";
+
 export default async function handler(req, res) {
   // Meta webhook verification
   if (req.method === "GET") {
@@ -70,23 +72,6 @@ export default async function handler(req, res) {
 
 Ако клиентот праша за цена, одговори со точната цена од ценовникот.
 
-Примери:
-
-Клиент: „Колку е шишање?“
-Одговор: „Шишањето е 400 денари. 😊“
-
-Клиент: „Колку е шишање со брада?“
-Одговор: „Шишање со брада е 500 денари. 😊“
-
-Клиент: „Колку е брада?“
-Одговор: „Брадата е 200 денари. 😊“
-
-Клиент: „Колку е миење?“
-Одговор: „Миењето е 50 денари. 😊“
-
-Клиент: „Колку е дизајн?“
-Одговор: „Дизајнот е 100 денари. 😊“
-
 Ако клиентот праша дали има слободен термин, НЕ кажувај дали има или нема термин.
 
 Одговори:
@@ -142,6 +127,73 @@ export default async function handler(req, res) {
         "Instagram send response:",
         JSON.stringify(instagramData)
       );
+
+      // =========================
+      // PUSH NOTIFICATION
+      // =========================
+
+      const needsBarber =
+        reply.includes("Ќе провериме") ||
+        reply.includes("Ќе ви пишеме");
+
+      if (needsBarber) {
+        try {
+          webpush.setVapidDetails(
+            "mailto:hello@replyoai.com",
+            "BGyIKFnz2WOV2V1ZJEsCRiwZyPePNu4EqrkcWhinbSSkrDsMR-i5mskqBeVWArud7dDHDCDJN3hKgfaOMMS1z4Q",
+            process.env.VAPID_PRIVATE_KEY
+          );
+
+          const supabaseResponse = await fetch(
+            `${process.env.NEXT_PUBLIC_SUPABASE_URL}/rest/v1/push_subscriptions?select=subscription`,
+            {
+              method: "GET",
+              headers: {
+                "apikey": process.env.SUPABASE_SERVICE_ROLE_KEY,
+                "Authorization": `Bearer ${process.env.SUPABASE_SERVICE_ROLE_KEY}`
+              }
+            }
+          );
+
+          const subscriptions = await supabaseResponse.json();
+
+          console.log(
+            "Push subscriptions:",
+            JSON.stringify(subscriptions)
+          );
+
+          if (Array.isArray(subscriptions)) {
+            for (const row of subscriptions) {
+              try {
+                const subscription =
+                  typeof row.subscription === "string"
+                    ? JSON.parse(row.subscription)
+                    : row.subscription;
+
+                await webpush.sendNotification(
+                  subscription,
+                  JSON.stringify({
+                    title: "ReplyoAI",
+                    body: `Новa порака од клиент: ${messageText}`
+                  })
+                );
+
+                console.log("Push notification sent successfully.");
+              } catch (pushError) {
+                console.error(
+                  "Push send error:",
+                  pushError
+                );
+              }
+            }
+          }
+        } catch (pushSetupError) {
+          console.error(
+            "Push setup error:",
+            pushSetupError
+          );
+        }
+      }
 
       return res.status(200).send("EVENT_RECEIVED");
 
