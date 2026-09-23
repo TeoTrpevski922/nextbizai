@@ -1943,9 +1943,9 @@ async function enablePushNotifications() {
 
     const registration = await navigator.serviceWorker.register("/sw.js");
 
-    const publicKey =
-      "BObEowSdOgIODnBIa66yFrGR7unIRODUpkV6jG8K3cXY6kZ888DQ7XpRXsRaXTLvnM9SAHIZb-CBEWXFvUaOxno";
-
+  const publicKey =
+  "BGyIKFnz2WOV2V1ZJEsCRiwZyPePNu4EqrkcWhinbSSkrDsMR-i5mskqBeVWArud7dDHDCDJN3hKgfaOMMS1z4Q";
+    
     const subscription = await registration.pushManager.subscribe({
       userVisibleOnly: true,
       applicationServerKey: urlBase64ToUint8Array(publicKey)
