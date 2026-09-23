@@ -324,7 +324,96 @@
 </head>
 
 <body>
+<div id="loginScreen" style="
+  position:fixed;
+  inset:0;
+  background:#f5f7fb;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:9999;
+  padding:20px;
+">
+  <div style="
+    width:100%;
+    max-width:420px;
+    background:white;
+    border:1px solid #e5e7eb;
+    border-radius:16px;
+    padding:30px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.08);
+  ">
+    <h2 style="margin:0 0 8px;">ReplyoAI</h2>
 
+    <p style="
+      margin:0 0 25px;
+      color:#6b7280;
+      font-size:14px;
+    ">
+      Business Login
+    </p>
+
+    <div style="margin-bottom:15px;">
+      <label style="
+        display:block;
+        font-size:13px;
+        font-weight:bold;
+        margin-bottom:7px;
+      ">
+        Email
+      </label>
+
+      <input
+        type="email"
+        id="loginEmail"
+        placeholder="Email"
+        style="width:100%;"
+      >
+    </div>
+
+    <div style="margin-bottom:15px;">
+      <label style="
+        display:block;
+        font-size:13px;
+        font-weight:bold;
+        margin-bottom:7px;
+      ">
+        Password
+      </label>
+
+      <input
+        type="password"
+        id="loginPassword"
+        placeholder="Password"
+        style="width:100%;"
+      >
+    </div>
+
+    <button
+      onclick="loginBusiness()"
+      style="
+        width:100%;
+        background:#111827;
+        color:white;
+        padding:13px;
+        border-radius:8px;
+        font-weight:bold;
+      "
+    >
+      Login
+    </button>
+
+    <div
+      id="loginError"
+      style="
+        margin-top:15px;
+        color:#dc2626;
+        font-size:13px;
+        display:none;
+      "
+    ></div>
+  </div>
+</div>
   <div class="header">
     <div>
       <h1>NextBizAI</h1>
