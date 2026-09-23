@@ -97,9 +97,15 @@ export default async function handler(req, res) {
         return res.status(200).send("EVENT_RECEIVED");
       }
 
-      const reply =
-        openaiData.output_text ||
-        "Ќе провериме и ќе ви пишеме за кратко. 😊";
+     const reply =
+  openaiData.output_text ||
+  openaiData.output
+    ?.flatMap(item => item.content || [])
+    ?.find(item => item.type === "output_text")
+    ?.text ||
+  "Ќе провериме и ќе ви пишеме за кратко. 😊";
+
+console.log("OpenAI reply:", reply);
 
       // Send reply back to Instagram
       const instagramResponse = await fetch(
