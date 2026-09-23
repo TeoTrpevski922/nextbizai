@@ -1564,7 +1564,11 @@ const businessResult =
   // =========================
   // START
   // =========================
+async function logoutBusiness() {
+  await supabaseClient.auth.signOut();
 
+  document.getElementById("loginScreen").style.display = "flex";
+}
  async function checkAuth() {
   const {
     data: { session }
