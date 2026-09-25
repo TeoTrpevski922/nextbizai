@@ -1579,6 +1579,13 @@ async function logoutBusiness() {
 
   document.getElementById("loginScreen").style.display = "flex";
 }
+  function connectInstagram() {
+  const businessId = business.id;
+
+  window.location.href =
+    "/api/instagram-connect?business_id=" +
+    encodeURIComponent(businessId);
+}
  async function checkAuth() {
   const {
     data: { session }
