@@ -12,7 +12,7 @@ export default async function handler(req, res) {
     return res.status(400).send("Missing Instagram authorization code.");
   }
 
-  const appId = process.env.INSTAGRAM_APP_ID;
+const appId = "1396330425251232";
   const appSecret = process.env.INSTAGRAM_APP_SECRET;
 
   const redirectUri =
