@@ -5,7 +5,7 @@ export default async function handler(req, res) {
     return res.status(400).send("Missing business_id.");
   }
 
-  const clientId = process.env.INSTAGRAM_APP_ID;
+ const clientId = "1396330425251232";
 
   const redirectUri =
     "https://nextbizai.vercel.app/api/instagram-auth";
