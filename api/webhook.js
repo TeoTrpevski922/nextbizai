@@ -58,6 +58,23 @@ await fetch(
     })
   }
 );
+      // Load previous conversation history
+const historyResponse = await fetch(
+  `${process.env.NEXT_PUBLIC_SUPABASE_URL}/rest/v1/instagram_conversations?instagram_account_id=eq.${encodeURIComponent(
+    String(instagramAccountId)
+  )}&sender_id=eq.${encodeURIComponent(
+    String(senderId)
+  )}&order=created_at.asc&limit=30`,
+  {
+    method: "GET",
+    headers: {
+      "apikey": process.env.SUPABASE_SERVICE_ROLE_KEY,
+      "Authorization": `Bearer ${process.env.SUPABASE_SERVICE_ROLE_KEY}`
+    }
+  }
+);
+
+const conversationHistory = await historyResponse.json();
       // Ask OpenAI
       const openaiResponse = await fetch(
         "https://api.openai.com/v1/responses",
