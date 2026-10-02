@@ -39,6 +39,25 @@ export default async function handler(req, res) {
         return res.status(200).send("EVENT_RECEIVED");
       }
 
+// Save customer message
+await fetch(
+  `${process.env.NEXT_PUBLIC_SUPABASE_URL}/rest/v1/instagram_conversations`,
+  {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "apikey": process.env.SUPABASE_SERVICE_ROLE_KEY,
+      "Authorization": `Bearer ${process.env.SUPABASE_SERVICE_ROLE_KEY}`,
+      "Prefer": "return=minimal"
+    },
+    body: JSON.stringify({
+      instagram_account_id: String(instagramAccountId),
+      sender_id: String(senderId),
+      role: "user",
+      message: messageText
+    })
+  }
+);
       // Ask OpenAI
       const openaiResponse = await fetch(
         "https://api.openai.com/v1/responses",
