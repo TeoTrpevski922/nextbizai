@@ -261,7 +261,10 @@ const conversationHistory = await historyResponse.json();
 Ако клиентот праша нешто што не е во овие информации, не измислувај одговор. Кажи:
 „Ќе провериме и ќе ви пишеме за кратко. 😊“
 `,
-            input: messageText
+            input: conversationHistory.map(item => ({
+  role: item.role,
+  content: item.message
+}))
           })
         }
       );
