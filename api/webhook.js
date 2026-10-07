@@ -104,13 +104,13 @@ if (!saveCustomerResponse.ok) {
     saveError
   );
 }
-      // Load previous conversation history
+  // Load latest conversation history
 const historyResponse = await fetch(
   `${process.env.NEXT_PUBLIC_SUPABASE_URL}/rest/v1/instagram_conversations?instagram_account_id=eq.${encodeURIComponent(
     String(instagramAccountId)
   )}&sender_id=eq.${encodeURIComponent(
     String(senderId)
-  )}&order=created_at.asc&limit=30`,
+  )}&order=created_at.desc&limit=30`,
   {
     method: "GET",
     headers: {
@@ -120,7 +120,11 @@ const historyResponse = await fetch(
   }
 );
 
-const conversationHistory = await historyResponse.json();
+const historyData = await historyResponse.json();
+
+const conversationHistory = Array.isArray(historyData)
+  ? historyData.reverse()
+  : [];
       // Ask OpenAI
       const openaiResponse = await fetch(
         "https://api.openai.com/v1/responses",
