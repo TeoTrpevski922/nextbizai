@@ -344,7 +344,51 @@ console.log("OpenAI reply:", reply);
         "Instagram send response:",
         JSON.stringify(instagramData)
       );
+// =========================
+// SYNC INSTAGRAM LEAD TO REPLYOAI WEBSITE
+// =========================
 
+try {
+  const leadMessages = [
+    ...conversationHistory.map(item => ({
+      role: item.role === "user" ? "customer" : "assistant",
+      text: item.message
+    })),
+    {
+      role: "assistant",
+      text: reply
+    }
+  ];
+
+  const leadResponse = await fetch(
+    "https://replyoai.lovable.app/api/public/instagram-lead",
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${process.env.REPLYO_LEADS_SECRET}`
+      },
+      body: JSON.stringify({
+        ig_account_id: String(instagramAccountId),
+        ig_sender_id: String(senderId),
+        messages: leadMessages
+      })
+    }
+  );
+
+  const leadData = await leadResponse.json();
+
+  console.log(
+    "ReplyoAI lead sync:",
+    JSON.stringify(leadData)
+  );
+
+} catch (leadError) {
+  console.error(
+    "ReplyoAI lead sync error:",
+    leadError
+  );
+}
       // =========================
       // PUSH NOTIFICATION
       // =========================
