@@ -39,8 +39,42 @@ const instagramMessageId = messaging?.message?.mid;
         return res.status(200).send("EVENT_RECEIVED");
       }
 
-// Save customer message
-await fetch(
+// Save customer message + prevent duplicate Instagram events
+
+if (instagramMessageId) {
+  const existingMessageResponse = await fetch(
+    `${process.env.NEXT_PUBLIC_SUPABASE_URL}/rest/v1/instagram_conversations?instagram_account_id=eq.${encodeURIComponent(
+      String(instagramAccountId)
+    )}&sender_id=eq.${encodeURIComponent(
+      String(senderId)
+    )}&instagram_message_id=eq.${encodeURIComponent(
+      String(instagramMessageId)
+    )}&select=id&limit=1`,
+    {
+      method: "GET",
+      headers: {
+        "apikey": process.env.SUPABASE_SERVICE_ROLE_KEY,
+        "Authorization": `Bearer ${process.env.SUPABASE_SERVICE_ROLE_KEY}`
+      }
+    }
+  );
+
+  const existingMessages = await existingMessageResponse.json();
+
+  if (
+    Array.isArray(existingMessages) &&
+    existingMessages.length > 0
+  ) {
+    console.log(
+      "Duplicate Instagram message ignored:",
+      instagramMessageId
+    );
+
+    return res.status(200).send("EVENT_RECEIVED");
+  }
+}
+
+const saveCustomerResponse = await fetch(
   `${process.env.NEXT_PUBLIC_SUPABASE_URL}/rest/v1/instagram_conversations`,
   {
     method: "POST",
@@ -54,10 +88,22 @@ await fetch(
       instagram_account_id: String(instagramAccountId),
       sender_id: String(senderId),
       role: "user",
-      message: messageText
+      message: messageText,
+      instagram_message_id: instagramMessageId
+        ? String(instagramMessageId)
+        : null
     })
   }
 );
+
+if (!saveCustomerResponse.ok) {
+  const saveError = await saveCustomerResponse.text();
+
+  console.error(
+    "Customer message save error:",
+    saveError
+  );
+}
       // Load previous conversation history
 const historyResponse = await fetch(
   `${process.env.NEXT_PUBLIC_SUPABASE_URL}/rest/v1/instagram_conversations?instagram_account_id=eq.${encodeURIComponent(
