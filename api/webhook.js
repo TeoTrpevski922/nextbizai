@@ -32,7 +32,8 @@ export default async function handler(req, res) {
       const senderId = messaging?.sender?.id;
       const messageText = messaging?.message?.text;
       const instagramAccountId = entry?.id;
-
+const instagramMessageId = messaging?.message?.mid;
+      
       // Ignore events that are not text messages
       if (!senderId || !messageText) {
         return res.status(200).send("EVENT_RECEIVED");
