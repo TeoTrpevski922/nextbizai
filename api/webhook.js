@@ -6,7 +6,6 @@ export default async function handler(req, res) {
     const mode = req.query["hub.mode"];
     const token = req.query["hub.verify_token"];
     const challenge = req.query["hub.challenge"];
-
     if (
       mode === "subscribe" &&
       token === process.env.INSTAGRAM_VERIFY_TOKEN
