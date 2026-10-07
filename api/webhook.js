@@ -318,34 +318,55 @@ const conversationHistory = await historyResponse.json();
 console.log("OpenAI reply:", reply);
 
       // Send reply back to Instagram
-      const instagramResponse = await fetch(
-        `https://graph.instagram.com/v24.0/17841420437644177/messages`,
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            "Authorization": `Bearer ${process.env.INSTAGRAM_ACCESS_TOKEN}`
-          },
-          body: JSON.stringify({
-            recipient: {
-              id: senderId
-            },
-            message: {
-              text: reply
-            }
-          })
-        }
-      );
-
-      const instagramData = await instagramResponse.json();
-
-      console.log(
-        "Instagram send response:",
-        JSON.stringify(instagramData)
-      );
+      // =========================
+// SAVE ASSISTANT REPLY
 // =========================
-// SYNC INSTAGRAM LEAD TO REPLYOAI WEBSITE
+
+try {
+  await fetch(
+    `${process.env.NEXT_PUBLIC_SUPABASE_URL}/rest/v1/instagram_conversations`,
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "apikey": process.env.SUPABASE_SERVICE_ROLE_KEY,
+        "Authorization": `Bearer ${process.env.SUPABASE_SERVICE_ROLE_KEY}`,
+        "Prefer": "return=minimal"
+      },
+      body: JSON.stringify({
+        instagram_account_id: String(instagramAccountId),
+        sender_id: String(senderId),
+        role: "assistant",
+        message: reply
+      })
+    }
+  );
+} catch (historyError) {
+  console.error("Assistant history save error:", historyError);
+}
+
+
 // =========================
+// CHECK IF PERSONAL LINK
+// WAS ALREADY SENT
+// =========================
+
+const alreadySentPersonalLink = conversationHistory.some(
+  item =>
+    item.role === "assistant" &&
+    typeof item.message === "string" &&
+    item.message.includes("https://replyoai.lovable.app/")
+);
+
+
+// =========================
+// SYNC INSTAGRAM LEAD
+// TO REPLYOAI WEBSITE
+// =========================
+
+let leadData = null;
+let personalLeadLink = null;
+let leadInterest = null;
 
 try {
   const leadMessages = [
@@ -375,11 +396,72 @@ try {
     }
   );
 
-  const leadData = await leadResponse.json();
+  const rawLeadResponse = await leadResponse.text();
+
+  try {
+    leadData = JSON.parse(rawLeadResponse);
+  } catch {
+    leadData = {
+      raw_response: rawLeadResponse
+    };
+  }
 
   console.log(
     "ReplyoAI lead sync:",
     JSON.stringify(leadData)
+  );
+
+  // Read interest from Lovable response
+  leadInterest =
+    leadData?.interest ||
+    leadData?.service_interest ||
+    leadData?.lead?.interest ||
+    leadData?.lead?.service_interest ||
+    null;
+
+  // Find the personalized ReplyoAI link
+  const findPersonalLink = value => {
+    if (typeof value === "string") {
+      if (
+        value.startsWith("https://replyoai.lovable.app/") &&
+        value !== "https://replyoai.lovable.app/" &&
+        value !== "https://replyoai.lovable.app"
+      ) {
+        return value;
+      }
+
+      return null;
+    }
+
+    if (Array.isArray(value)) {
+      for (const item of value) {
+        const found = findPersonalLink(item);
+        if (found) return found;
+      }
+
+      return null;
+    }
+
+    if (value && typeof value === "object") {
+      for (const item of Object.values(value)) {
+        const found = findPersonalLink(item);
+        if (found) return found;
+      }
+    }
+
+    return null;
+  };
+
+  personalLeadLink = findPersonalLink(leadData);
+
+  console.log(
+    "Lead interest:",
+    leadInterest
+  );
+
+  console.log(
+    "Personal lead link:",
+    personalLeadLink || "NOT FOUND"
   );
 
 } catch (leadError) {
@@ -387,6 +469,113 @@ try {
     "ReplyoAI lead sync error:",
     leadError
   );
+}
+
+
+// =========================
+// SEND AI REPLY TO INSTAGRAM
+// =========================
+
+const instagramResponse = await fetch(
+  `https://graph.instagram.com/v24.0/${instagramAccountId}/messages`,
+  {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "Authorization": `Bearer ${process.env.INSTAGRAM_ACCESS_TOKEN}`
+    },
+    body: JSON.stringify({
+      recipient: {
+        id: senderId
+      },
+      message: {
+        text: reply
+      }
+    })
+  }
+);
+
+const instagramData = await instagramResponse.json();
+
+console.log(
+  "Instagram send response:",
+  JSON.stringify(instagramData)
+);
+
+
+// =========================
+// SEND PERSONALIZED LEAD LINK
+// =========================
+
+const validInterests = [
+  "digital_receptionist",
+  "website",
+  "instagram_management",
+  "complete"
+];
+
+const shouldSendPersonalLink =
+  !alreadySentPersonalLink &&
+  validInterests.includes(leadInterest) &&
+  !!personalLeadLink;
+
+if (shouldSendPersonalLink) {
+  try {
+    const linkMessage =
+      "Супер! 😊 Еве ви персонализиран линк за да продолжите:";
+
+    const linkResponse = await fetch(
+      `https://graph.instagram.com/v24.0/${instagramAccountId}/messages`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": `Bearer ${process.env.INSTAGRAM_ACCESS_TOKEN}`
+        },
+        body: JSON.stringify({
+          recipient: {
+            id: senderId
+          },
+          message: {
+            text: `${linkMessage}\n${personalLeadLink}`
+          }
+        })
+      }
+    );
+
+    const linkData = await linkResponse.json();
+
+    console.log(
+      "Personal lead link sent:",
+      JSON.stringify(linkData)
+    );
+
+    // Save link message to conversation history
+    await fetch(
+      `${process.env.NEXT_PUBLIC_SUPABASE_URL}/rest/v1/instagram_conversations`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "apikey": process.env.SUPABASE_SERVICE_ROLE_KEY,
+          "Authorization": `Bearer ${process.env.SUPABASE_SERVICE_ROLE_KEY}`,
+          "Prefer": "return=minimal"
+        },
+        body: JSON.stringify({
+          instagram_account_id: String(instagramAccountId),
+          sender_id: String(senderId),
+          role: "assistant",
+          message: `${linkMessage}\n${personalLeadLink}`
+        })
+      }
+    );
+
+  } catch (linkError) {
+    console.error(
+      "Personal lead link send error:",
+      linkError
+    );
+  }
 }
       // =========================
       // PUSH NOTIFICATION
