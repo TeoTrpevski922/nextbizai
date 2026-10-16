@@ -116,7 +116,7 @@ const conversationHistory = Array.isArray(historyData)
           },
           body: JSON.stringify({
             model: "gpt-5.6-luna",
- instructions:
+instructions:
   instagramAccountId === "17841420437644177"
     ? `
 Ти си AI асистент и дигитален продажен советник на ReplyoAI.
