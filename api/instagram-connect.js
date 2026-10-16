@@ -16,13 +16,14 @@ export default async function handler(req, res) {
     "instagram_business_manage_comments"
   ].join(",");
 
-  const instagramUrl =
+   const instagramUrl =
     "https://www.instagram.com/oauth/authorize" +
     `?client_id=${encodeURIComponent(clientId)}` +
     `&redirect_uri=${encodeURIComponent(redirectUri)}` +
     `&response_type=code` +
     `&scope=${encodeURIComponent(scopes)}` +
-    `&state=${encodeURIComponent(businessId)}`;
+    `&state=${encodeURIComponent(businessId)}` +
+    `&force_authentication=1`;
 
   return res.redirect(302, instagramUrl);
 }
