@@ -128,7 +128,6 @@ const appId = "1396330425251232";
           "Instagram account already belongs to another business:",
           existing.instagram_username
         );
-
         return res.status(409).send(
           "This Instagram account is already connected to another business. Please verify the Instagram profile you authorized."
         );
