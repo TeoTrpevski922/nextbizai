@@ -102,34 +102,95 @@ const appId = "1396330425251232";
       );
     }
 
-    const supabaseResponse = await fetch(
-      `${process.env.NEXT_PUBLIC_SUPABASE_URL}/rest/v1/instagram_accounts`,
+      // Check whether this Instagram account is already connected
+    const existingResponse = await fetch(
+      `${process.env.NEXT_PUBLIC_SUPABASE_URL}/rest/v1/instagram_accounts?instagram_user_id=eq.${encodeURIComponent(String(meData.id))}&select=business_id,instagram_username`,
       {
-        method: "POST",
         headers: {
           apikey: process.env.SUPABASE_SERVICE_ROLE_KEY,
-          Authorization: `Bearer ${process.env.SUPABASE_SERVICE_ROLE_KEY}`,
-          "Content-Type": "application/json",
-          Prefer: "resolution=merge-duplicates"
-        },
-        body: JSON.stringify({
-          business_id: businessId,
-          instagram_user_id: String(meData.id),
-          instagram_username: meData.username || null,
-          access_token: longLivedToken,
-          token_expires_at: tokenExpiresAt,
-          updated_at: new Date().toISOString()
-        })
+          Authorization: `Bearer ${process.env.SUPABASE_SERVICE_ROLE_KEY}`
+        }
       }
     );
 
-    const supabaseData = await supabaseResponse.text();
+    const existingAccounts = await existingResponse.json();
 
-    if (!supabaseResponse.ok) {
-      console.error("Supabase Instagram save error:", supabaseData);
-      return res.status(500).json({
-        error: "Could not save Instagram account"
-      });
+    if (!existingResponse.ok) {
+      console.error("Instagram account lookup error:", existingAccounts);
+      return res.status(500).send("Could not verify Instagram account.");
+    }
+
+    if (existingAccounts.length > 0) {
+      const existing = existingAccounts[0];
+
+      if (existing.business_id !== businessId) {
+        console.error(
+          "Instagram account already belongs to another business:",
+          existing.instagram_username
+        );
+
+        return res.status(409).send(
+          "This Instagram account is already connected to another business. Please verify the Instagram profile you authorized."
+        );
+      }
+
+      // Same account and same business: update its token
+      const updateResponse = await fetch(
+        `${process.env.NEXT_PUBLIC_SUPABASE_URL}/rest/v1/instagram_accounts?instagram_user_id=eq.${encodeURIComponent(String(meData.id))}&business_id=eq.${encodeURIComponent(businessId)}`,
+        {
+          method: "PATCH",
+          headers: {
+            apikey: process.env.SUPABASE_SERVICE_ROLE_KEY,
+            Authorization: `Bearer ${process.env.SUPABASE_SERVICE_ROLE_KEY}`,
+            "Content-Type": "application/json",
+            Prefer: "return=minimal"
+          },
+          body: JSON.stringify({
+            instagram_username: meData.username || null,
+            access_token: longLivedToken,
+            token_expires_at: tokenExpiresAt,
+            updated_at: new Date().toISOString()
+          })
+        }
+      );
+
+      if (!updateResponse.ok) {
+        console.error(
+          "Instagram account update error:",
+          await updateResponse.text()
+        );
+        return res.status(500).send("Could not update Instagram account.");
+      }
+    } else {
+      // New Instagram account: insert a new row
+      const insertResponse = await fetch(
+        `${process.env.NEXT_PUBLIC_SUPABASE_URL}/rest/v1/instagram_accounts`,
+        {
+          method: "POST",
+          headers: {
+            apikey: process.env.SUPABASE_SERVICE_ROLE_KEY,
+            Authorization: `Bearer ${process.env.SUPABASE_SERVICE_ROLE_KEY}`,
+            "Content-Type": "application/json",
+            Prefer: "return=minimal"
+          },
+          body: JSON.stringify({
+            business_id: businessId,
+            instagram_user_id: String(meData.id),
+            instagram_username: meData.username || null,
+            access_token: longLivedToken,
+            token_expires_at: tokenExpiresAt,
+            updated_at: new Date().toISOString()
+          })
+        }
+      );
+
+      if (!insertResponse.ok) {
+        console.error(
+          "Instagram account insert error:",
+          await insertResponse.text()
+        );
+        return res.status(500).send("Could not save Instagram account.");
+      }
     }
 
     return res.status(200).send(`
