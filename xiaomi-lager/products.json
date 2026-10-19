@@ -1,1 +1,3352 @@
-[]
+[
+  {
+    "sku": "BHR07SKEU",
+    "name": "Xiaomi 67W HyperCharge",
+    "ean": "6932554423599",
+    "category": "Други производи и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR07UIEU",
+    "name": "Outdoor Camera Xiaomi CW100",
+    "ean": "6932554428877",
+    "category": "Smart Home и безбедност",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR07UKEU",
+    "name": "Xiaomi 20W Power Strip",
+    "ean": "6932554428853",
+    "category": "Електроника и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR07VOGL",
+    "name": "Pametna kamera XIAOMI C100",
+    "ean": "6932554429775",
+    "category": "Други производи и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR07VRGL",
+    "name": "Xiaomi Watch S4 41mm Strap BL",
+    "ean": "6932554430580",
+    "category": "Нослива технологија и аудио",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR07VUGL",
+    "name": "Xiaomi Watch S4 41mm White",
+    "ean": "6932554430610",
+    "category": "Нослива технологија и аудио",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR07VWGL",
+    "name": "Xiaomi Watch S4 41mm Gold",
+    "ean": "6932554430634",
+    "category": "Нослива технологија и аудио",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR07WFEU",
+    "name": "Xiaomi Robot Vacuum 5 Pro",
+    "ean": "6932554430757",
+    "category": "Правосмукалки и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR07WPGL",
+    "name": "Xiaomi Watch 5 Green Strap",
+    "ean": "6932554431464",
+    "category": "Нослива технологија и аудио",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR07WRGL",
+    "name": "Xiaomi Watch 5 Black Strap",
+    "ean": "6932554431488",
+    "category": "Нослива технологија и аудио",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR07X7EU",
+    "name": "Xiaomi Smart Camera C701 EU",
+    "ean": "6941812799390",
+    "category": "Smart Home и безбедност",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR07XBEU",
+    "name": "Xiaomi Robot Vacuum H40",
+    "ean": "6932554432416",
+    "category": "Правосмукалки и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR07ZYEU",
+    "name": "Xiaomi Oscillation Electric Toothbrush Pro EU white",
+    "ean": "6932554436056",
+    "category": "Правосмукалки и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR082TEU",
+    "name": "Mijia Smart Evaporative Humidifier Pro EU",
+    "ean": "6932554439644",
+    "category": "Домашни апарати и лична нега",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR0834EU",
+    "name": "Xiaomi Robot Vacuum 5 EU",
+    "ean": "6932554439897",
+    "category": "Правосмукалки и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR083KGL",
+    "name": "Xiaomi Selfie Stick Tripod",
+    "ean": "6932554440435",
+    "category": "Други производи и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR083MEU",
+    "name": "Xiaomi Air Fryer 6.5L White",
+    "ean": "6932554440572",
+    "category": "Домашни апарати и лична нега",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR083NEU",
+    "name": "Xiaomi Air Fryer 6.5L Black",
+    "ean": "6932554440589",
+    "category": "Домашни апарати и лична нега",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR084AEU",
+    "name": "Xiaomi Robot Vacuum S40",
+    "ean": "6932554440893",
+    "category": "Правосмукалки и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR084SEU",
+    "name": "Xiaomi Smart Graphene Heater",
+    "ean": "6932554440725",
+    "category": "Домашни апарати и лична нега",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR087MEU",
+    "name": "XIAOMI 90W HyperCharge 3-port",
+    "ean": "6932554443931",
+    "category": "Други производи и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR087SGL",
+    "name": "Redmi Pad 2 Cover (Gray)",
+    "ean": "6932554444112",
+    "category": "Телефони и таблети",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR089NEU",
+    "name": "Xiaomi Robot Vacuum H50 Pro",
+    "ean": "6932554446918",
+    "category": "Правосмукалки и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR089REU",
+    "name": "Xiaomi Robot Vacuum S40 Pro",
+    "ean": "6932554447052",
+    "category": "Правосмукалки и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR08C6EU",
+    "name": "Mi Vacuum Cleaner G30 Max EU",
+    "ean": "6932554452391",
+    "category": "Правосмукалки и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR08CIGL",
+    "name": "REDMI Watch 6 Obsidian Black",
+    "ean": "6932554452520",
+    "category": "Нослива технологија и аудио",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR08CUGL",
+    "name": "REDMI Watch 6 Silver Gray",
+    "ean": "6932554452643",
+    "category": "Нослива технологија и аудио",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR08CWGL",
+    "name": "REDMI Watch 6 Glacier Blue",
+    "ean": "6932554452667",
+    "category": "Нослива технологија и аудио",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR08GJGL",
+    "name": "REDMI Buds 8 Pro Cloud White",
+    "ean": "6932554458157",
+    "category": "Нослива технологија и аудио",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR08GMGL",
+    "name": "REDMI Buds 8 Pro Glacier Blue",
+    "ean": "6932554458157",
+    "category": "Нослива технологија и аудио",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR08GUEU",
+    "name": "Xiaomi Robot Vacuum H50",
+    "ean": "6932554458287",
+    "category": "Правосмукалки и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR08ISGL",
+    "name": "Xiaomi Watch S5 46mm Silver",
+    "ean": "6932554463366",
+    "category": "Нослива технологија и аудио",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR08ITGL",
+    "name": "Xiaomi Watch S5 46mm Blue",
+    "ean": "6932554463373",
+    "category": "Нослива технологија и аудио",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR08IVGL",
+    "name": "Xiaomi Watch S5 46mm Black",
+    "ean": "6932554463397",
+    "category": "Нослива технологија и аудио",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR08J7EU",
+    "name": "Xiaomi Vacuum Cleaner P30 EU",
+    "ean": "6932554463496",
+    "category": "Правосмукалки и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR08JPGL",
+    "name": "REDMI Buds 8 Active Blue",
+    "ean": "6932554464196",
+    "category": "Нослива технологија и аудио",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR08JTGL",
+    "name": "REDMI Buds 8 Active Black",
+    "ean": "6932554464233",
+    "category": "Нослива технологија и аудио",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR08JUGL",
+    "name": "REDMI Buds 8 Active White",
+    "ean": "6932554464240",
+    "category": "Нослива технологија и аудио",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR08MZEU",
+    "name": "Air Purifier Xiaomi Mijia 6",
+    "ean": "6932554469139",
+    "category": "Домашни апарати и лична нега",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR08NBGL",
+    "name": "Xiaomi Smart Camera C201",
+    "ean": "6932554469870",
+    "category": "Smart Home и безбедност",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR08NZGL",
+    "name": "Xiaomi 67W Power bank 10000mAh Ice Blue",
+    "ean": "6932554471149",
+    "category": "Електроника и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR08O0GL",
+    "name": "Xiaomi 67W Power bank 10000mAh Tan",
+    "ean": "6932554471132",
+    "category": "Електроника и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR08O9GL",
+    "name": "Filter Air Purifier Xiaomi Mijia 6",
+    "ean": "6932554471187",
+    "category": "Правосмукалки и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR08ODGL",
+    "name": "Xiaomi Buds 6 Black",
+    "ean": "6932554471811",
+    "category": "Нослива технологија и аудио",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR08OGGL",
+    "name": "Xiaomi Buds 6 White",
+    "ean": "6932554471842",
+    "category": "Нослива технологија и аудио",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR08OHGL",
+    "name": "Xiaomi Buds 6 Gray",
+    "ean": "6932554471859",
+    "category": "Нослива технологија и аудио",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR08OJGL",
+    "name": "REDMI Buds 8 Lite Blue",
+    "ean": "6932554471927",
+    "category": "Нослива технологија и аудио",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR08OLGL",
+    "name": "REDMI Buds 8 Lite White",
+    "ean": "6932554471880",
+    "category": "Нослива технологија и аудио",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR08OMGL",
+    "name": "REDMI Buds 8 Lite Black",
+    "ean": "6932554471897",
+    "category": "Нослива технологија и аудио",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR08P9GL",
+    "name": "Xiaomi Magnetic Power Bank 10000mAh Dark Grey",
+    "ean": "6932554473723",
+    "category": "Електроника и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR08PAGL",
+    "name": "Xiaomi Magnetic Power Bank 10000mAh Purple",
+    "ean": "6932554473761",
+    "category": "Електроника и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR08PCGL",
+    "name": "Xiaomi Magnetic Power Bank 10000mAh Blue",
+    "ean": "6932554473747",
+    "category": "Електроника и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR08QLGL",
+    "name": "Xiaomi El. Scooter 6 Max GL",
+    "ean": "6932554477295",
+    "category": "Електрични тротинети и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR08QQGL",
+    "name": "Xiaomi El. Scooter 6 Pro GL",
+    "ean": "6932554477349",
+    "category": "Електрични тротинети и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR08R2GL",
+    "name": "Xiaomi Electric Scooter 6 GL",
+    "ean": "6932554477752",
+    "category": "Електрични тротинети и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR08R6GL",
+    "name": "Xiaomi El. Scooter 6 Lite GL",
+    "ean": "6932554477738",
+    "category": "Електрични тротинети и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR08SKGL",
+    "name": "Xiaomi Tag 4 Pack",
+    "ean": "6932554480745",
+    "category": "Други производи и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR08U4EU",
+    "name": "Mijia Smart Steam Air Fryer 7L EU",
+    "ean": "6932554485535",
+    "category": "Домашни апарати и лична нега",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR08UHGL",
+    "name": "REDMI Buds 8 White",
+    "ean": "6932554486532",
+    "category": "Нослива технологија и аудио",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR08UJGL",
+    "name": "REDMI Buds 8 Green",
+    "ean": "6932554486556",
+    "category": "Нослива технологија и аудио",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR08USGL",
+    "name": "El. Scooter Fast Charger 2",
+    "ean": "6932554486112",
+    "category": "Електрични тротинети и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR08V2EU",
+    "name": "Xiaomi Robot Vacuum 6 Max",
+    "ean": "6932554486198",
+    "category": "Правосмукалки и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR08VXGL",
+    "name": "Mijia Smart Glasses Browline",
+    "ean": "6932554487126",
+    "category": "Нослива технологија и аудио",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR08VYGL",
+    "name": "Mijia Glasses Pilot-Style",
+    "ean": "6932554487133",
+    "category": "Нослива технологија и аудио",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR08W2GL",
+    "name": "REDMI Headphones Neo White",
+    "ean": "6932554487430",
+    "category": "Нослива технологија и аудио",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR08W3GL",
+    "name": "REDMI Headphones Neo LDU-White",
+    "ean": "6932554487447",
+    "category": "Нослива технологија и аудио",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR08W5GL",
+    "name": "REDMI Headphones Neo Black",
+    "ean": "6932554487461",
+    "category": "Нослива технологија и аудио",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR08W9GL",
+    "name": "Xiaomi Smart Band 10 Pro Black",
+    "ean": "6932554487522",
+    "category": "Нослива технологија и аудио",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR08WBGL",
+    "name": "Xiaomi Smart Band 10 Pro S",
+    "ean": "6932554487546",
+    "category": "Нослива технологија и аудио",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR08WGGL",
+    "name": "Xiaomi Smart Band 10 Pro Pink",
+    "ean": "6932554487591",
+    "category": "Нослива технологија и аудио",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR08X0EU",
+    "name": "Xiaomi Robot Vacuum 6 Pro EU",
+    "ean": "6932554487706",
+    "category": "Правосмукалки и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR08XCTY",
+    "name": "Mijia Smart Air Purifier Max Filter",
+    "ean": "6932554490751",
+    "category": "Правосмукалки и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR08Z2GL",
+    "name": "Xiaomi UltraThin Magnetic Power Bank 5000 15W Glacier Silver",
+    "ean": "6932554494001",
+    "category": "Електроника и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR08ZTEU",
+    "name": "Xiaomi Robot Vacuum 6 EU",
+    "ean": "6932554494988",
+    "category": "Правосмукалки и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR0913GL",
+    "name": "Xiaomi UltraThin Magnetic Power Bank 5000 15W GL Graphite Black",
+    "ean": "6932554496173",
+    "category": "Електроника и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR095HEU",
+    "name": "Xiaomi Smart Camera C701Pro",
+    "ean": "6932554451370",
+    "category": "Smart Home и безбедност",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR098KEU",
+    "name": "Xiaomi Truclean 5 Pro EU",
+    "ean": "6932554477653",
+    "category": "Правосмукалки и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR099AEU",
+    "name": "Mijia Capsule Coffee Machine",
+    "ean": "6932554409067",
+    "category": "Домашни апарати и лична нега",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR099HEU",
+    "name": "Mijia Electric Shaver Pro",
+    "ean": "6932554422288",
+    "category": "Домашни апарати и лична нега",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR09BXEU",
+    "name": "Mijia Vacuum Cleaner 4 C EU",
+    "ean": "6932554461614",
+    "category": "Правосмукалки и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR09C1EU",
+    "name": "Mijia Vacuum Cleaner 4 Pro",
+    "ean": "6932554446543",
+    "category": "Правосмукалки и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR09CVGL",
+    "name": "REDMI Watch 6 Lite Steel Gray",
+    "ean": "6932554406004",
+    "category": "Нослива технологија и аудио",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR09CWGL",
+    "name": "REDMI Watch 6 Lite Black",
+    "ean": "6932554406042",
+    "category": "Нослива технологија и аудио",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR09CXGL",
+    "name": "REDMI Watch 6 Active Matte Silver",
+    "ean": "6932554406059",
+    "category": "Нослива технологија и аудио",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR09CYGL",
+    "name": "REDMI Watch 6 Active Sunset Orange",
+    "ean": "6932554406080",
+    "category": "Нослива технологија и аудио",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR09CZGL",
+    "name": "REDMI Watch 6 Active Midnight Black",
+    "ean": "6932554406103",
+    "category": "Нослива технологија и аудио",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR09GNEU",
+    "name": "Mijia Smart Air Purifier 6 Plus EU",
+    "ean": "6932554400538",
+    "category": "Домашни апарати и лична нега",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR4037GL",
+    "name": "Mi Smart Space Heater S EU",
+    "ean": "6934177718267",
+    "category": "Домашни апарати и лична нега",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR4247TY",
+    "name": "Mi Robot Vacuum-Mop Es Brush",
+    "ean": "6934177720369",
+    "category": "Правосмукалки и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR4248TY",
+    "name": "Mi Robot Vacuum-Mop Ess.Filter",
+    "ean": "6934177720352",
+    "category": "Правосмукалки и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR4249TY",
+    "name": "Mi Robot Vacuum-Mop Essential",
+    "ean": "6934177720345",
+    "category": "Правосмукалки и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR4250TY",
+    "name": "Mi Robot Vacuum-Mop Es.mop.clo",
+    "ean": "6934177720338",
+    "category": "Правосмукалки и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR4251TY",
+    "name": "Mi Robot Vacuum-Mop Essential",
+    "ean": "6934177720321",
+    "category": "Правосмукалки и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR4421GL",
+    "name": "Mi Type-C to Lightning Cable 1",
+    "ean": "6934177721854",
+    "category": "Електроника и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR4558GL",
+    "name": "Mi Automatic Foaming Soap",
+    "ean": "6934177723179",
+    "category": "Домашни апарати и лична нега",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR4559GL",
+    "name": "Mi x Simpleway Foam.Hand Soap",
+    "ean": "6934177723162",
+    "category": "Домашни апарати и лична нега",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR4615CN",
+    "name": "Mi Vacuum Cleaner G10 Mop Kit",
+    "ean": "6934177723735",
+    "category": "Правосмукалки и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR4634CN",
+    "name": "Mi Vacuum Cleaner Light Hepa F",
+    "ean": "6934177723902",
+    "category": "Правосмукалки и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR4680GL",
+    "name": "Mi Precision Screwdriver Kit",
+    "ean": "6934177724404",
+    "category": "Електроника и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR4773GL",
+    "name": "Mi Vacuum Cleaner G10/G9 filte",
+    "ean": "6934177726422",
+    "category": "Правосмукалки и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR4779GL",
+    "name": "Mi 16-in-1 Ratchet Screwdriver",
+    "ean": "6934177726361",
+    "category": "Електроника и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR4802GL",
+    "name": "Mi Portable Bluetooth Speaker",
+    "ean": "6934177726774",
+    "category": "Електроника и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR4887GL",
+    "name": "Mi Watch Strap (3-Pack)",
+    "ean": "6934177730122",
+    "category": "Нослива технологија и аудио",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR5056EU",
+    "name": "Xiaomi Smart Air Purifier4 PRO",
+    "ean": "6934177743665",
+    "category": "Домашни апарати и лична нега",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR5062GL",
+    "name": "Xiaomi Smart Air Purif.4 Pro F",
+    "ean": "6934177743672",
+    "category": "Други производи и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR5120GL",
+    "name": "Xiaomi Smart Air Purifier 4 Filter",
+    "ean": "6934177745430",
+    "category": "Правосмукалки и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR5135GL",
+    "name": "Mi Smart Band 6 Strap-3 pack",
+    "ean": "6934177745638",
+    "category": "Нослива технологија и аудио",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR5154GL",
+    "name": "Mi Door and Window Sensor 2",
+    "ean": "6934177745638",
+    "category": "Smart Home и безбедност",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR5156EU",
+    "name": "Mi Vacuum Cleaner Mini EU",
+    "ean": "6934177745959",
+    "category": "Правосмукалки и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR5272GL",
+    "name": "Xiaomi Smart Air Purifier 4 Lite Filter",
+    "ean": "6934177750434",
+    "category": "Правосмукалки и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR5274GL",
+    "name": "Xiaomi Smart Air Purifier4 Lit",
+    "ean": "6934177751158",
+    "category": "Домашни апарати и лична нега",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR5278GL",
+    "name": "Mi Motion-Activated Night Ligh",
+    "ean": "6934177751325",
+    "category": "Smart Home и безбедност",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR5331TY",
+    "name": "Mi Robot Disposable Bag MOP2 u",
+    "ean": "6934177753145",
+    "category": "Правосмукалки и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR5435GL",
+    "name": "Mi Temperature and Hum.Mon PRO",
+    "ean": "6934177756016",
+    "category": "Домашни апарати и лична нега",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR5437GL",
+    "name": "Redmi Watch 2 Lite Strap Pink",
+    "ean": "6934177756047",
+    "category": "Нослива технологија и аудио",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR5438GL",
+    "name": "Redmi Watch 2 Lite Strap-Olive",
+    "ean": "6934177756030",
+    "category": "Нослива технологија и аудио",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR5474GL",
+    "name": "Mi Cordless Precis.Screwdriv K",
+    "ean": "6934177756474",
+    "category": "Други производи и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR5510GL",
+    "name": "Xiaomi 12V Max BrushlessCordle",
+    "ean": "6934177757839",
+    "category": "Телефони и таблети",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR5593GL",
+    "name": "Xiaomi S1 Active Strap Orange",
+    "ean": "6934177761287",
+    "category": "Нослива технологија и аудио",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR5594GL",
+    "name": "Xiaomi S1 Active Strap -Yellow",
+    "ean": "6934177761270",
+    "category": "Нослива технологија и аудио",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR5596GL",
+    "name": "Xiaomi Smart Laser Measure",
+    "ean": "6934177761218",
+    "category": "Електроника и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR5834GL",
+    "name": "Redmi Watch 2 Lite Strap",
+    "ean": "6934177772511",
+    "category": "Нослива технологија и аудио",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR5860EU",
+    "name": "Xiaomi Smart Air Purifier 4 Co",
+    "ean": "6934177775345",
+    "category": "Домашни апарати и лична нега",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR5861GL",
+    "name": "Xiaomi Smart Air Purifier 4 Compact Filter",
+    "ean": "6934177775352",
+    "category": "Правосмукалки и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR6026EU",
+    "name": "Xiaomi Smart Humidifier 2 EU",
+    "ean": "6934177783982",
+    "category": "Домашни апарати и лична нега",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR6358GL",
+    "name": "Xiaomi Smart Air Purifier Elite Filter",
+    "ean": "6934177793400",
+    "category": "Правосмукалки и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR6359EU",
+    "name": "Xiaomi Smart Air Purif Elite",
+    "ean": "6934177793394",
+    "category": "Други производи и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR6396EU",
+    "name": "Xiaomi Grooming Kit Pro",
+    "ean": "6934177794292",
+    "category": "Други производи и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR6605EU",
+    "name": "Xiaomi Humidifier 2 Lite EU",
+    "ean": "6934177799785",
+    "category": "Домашни апарати и лична нега",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR6749GL",
+    "name": "Xiaomi Riding Gloves L",
+    "ean": "6941812702741",
+    "category": "Електрични тротинети и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR6750GL",
+    "name": "Xiaomi El.Scot. Storage Bag",
+    "ean": "6941812702734",
+    "category": "Други производи и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR6751GL",
+    "name": "Xiaomi Scooter Cable Lock",
+    "ean": "6941812702727",
+    "category": "Електрични тротинети и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR6765GL",
+    "name": "Xiaomi Smart Home Hub 2",
+    "ean": "6941812703427",
+    "category": "Smart Home и безбедност",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR6814GL",
+    "name": "Xiaomi 67W Car Charger",
+    "ean": "6941812704226",
+    "category": "Електроника и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR6816EU",
+    "name": "Xiaomi Outdoor Camera AW300",
+    "ean": "6941812704325",
+    "category": "Smart Home и безбедност",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR6868EU",
+    "name": "Xiaomi Smart Plug 2 EU",
+    "ean": "6941812706626",
+    "category": "Smart Home и безбедност",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR6938GL",
+    "name": "Redmi Watch 3 Silicone Strap",
+    "ean": "6941812708149",
+    "category": "Нослива технологија и аудио",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR6975GL",
+    "name": "Redmi Smart Band 2 Strap Pink",
+    "ean": "6941812709504",
+    "category": "Нослива технологија и аудио",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR7004GL",
+    "name": "Multifunkcionalna lampa Xiaomi",
+    "ean": "6941812713211",
+    "category": "Други производи и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR7052EU",
+    "name": "XIAOMI UniBlade Trimmer EU",
+    "ean": "6941812717967",
+    "category": "Домашни апарати и лична нега",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR7068GL",
+    "name": "Xiaomi Smart Doorbell 3S",
+    "ean": "6941812718599",
+    "category": "Smart Home и безбедност",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR7305GL",
+    "name": "Xiaomi Smart Band 8-strap yell",
+    "ean": "6941812727867",
+    "category": "Нослива технологија и аудио",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR7306GL",
+    "name": "Xiaomi Smart Band 8 Green stra",
+    "ean": "6941812727874",
+    "category": "Нослива технологија и аудио",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR7349GL",
+    "name": "Xiaomi Camping Lantern",
+    "ean": "6941812729229",
+    "category": "Електроника и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR7423EU",
+    "name": "Xiaomi Electric Glass Kettle",
+    "ean": "6941812734339",
+    "category": "Домашни апарати и лична нега",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR7450EU",
+    "name": "Xiaomi Electric Shaver S301",
+    "ean": "6941812736555",
+    "category": "Домашни апарати и лична нега",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR7456EU",
+    "name": "Xiaomi Electric Shaver S101",
+    "ean": "6941812736579",
+    "category": "Домашни апарати и лична нега",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR7560GL",
+    "name": "Xiaomi 50W Wirel.Char.StandPro",
+    "ean": "6941812741368",
+    "category": "Други производи и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR7990EU",
+    "name": "Xiaomi Microwave Oven EU",
+    "ean": "6941812761908",
+    "category": "Домашни апарати и лична нега",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR8034GL",
+    "name": "Xiaomi Watch 2 Silver Case",
+    "ean": "6941812764404",
+    "category": "Нослива технологија и аудио",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR8195EU",
+    "name": "Xiaomi Vacuum Cleaner G20 Lite",
+    "ean": "6941812771921",
+    "category": "Правосмукалки и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR8228EU",
+    "name": "Xiaomi Tower Heater EU",
+    "ean": "6941812773185",
+    "category": "Домашни апарати и лична нега",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR8269EU",
+    "name": "Xiaomi Handheld Steamer",
+    "ean": "6941812774571",
+    "category": "Домашни апарати и лична нега",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR8304GL",
+    "name": "Xiaomi 80W Charging Stand",
+    "ean": "6934177716188",
+    "category": "Електроника и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR8313GL",
+    "name": "Xiaomi Watch Bezel Rainbow",
+    "ean": "6941812775141",
+    "category": "Нослива технологија и аудио",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR8374EU",
+    "name": "Xiaomi Smart Dehumidifier Lite",
+    "ean": "6941812777466",
+    "category": "Домашни апарати и лична нега",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR8637EU",
+    "name": "Xiaomi Lint Remover",
+    "ean": "6941812786901",
+    "category": "Домашни апарати и лична нега",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR8755EU",
+    "name": "Xiaomi Smart Camera C500 Dual",
+    "ean": "6941812790861",
+    "category": "Smart Home и безбедност",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR8773GL",
+    "name": "Redmi Buds 6 Play White",
+    "ean": "6941812791271",
+    "category": "Нослива технологија и аудио",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR8775GL",
+    "name": "Redmi Buds 6 Play Pink",
+    "ean": "6941812791295",
+    "category": "Нослива технологија и аудио",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR8776GL",
+    "name": "Xiaomi Redmi Buds 6 Play Black",
+    "ean": "6941812791240",
+    "category": "Нослива технологија и аудио",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR8791GL",
+    "name": "Redmi Watch 5 Lite Gold",
+    "ean": "6941812791554",
+    "category": "Нослива технологија и аудио",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR8793GL",
+    "name": "Xiaomi Blue Light Blocking Gla",
+    "ean": "6941812792049",
+    "category": "Други производи и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR8804GL",
+    "name": "Xiaomi 5 in 1 Type C Hub",
+    "ean": "6941812791639",
+    "category": "Smart Home и безбедност",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR8811EU",
+    "name": "Xiaomi Toaster EU",
+    "ean": "6941812791868",
+    "category": "Домашни апарати и лична нега",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR8816GL",
+    "name": "Xiaomi Dual Flash Drive 128gb",
+    "ean": "6941812791820",
+    "category": "Електроника и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR8828EU",
+    "name": "Xiaomi Vacuum Cleaner G20 Max",
+    "ean": "6941812791967",
+    "category": "Правосмукалки и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR8831EU",
+    "name": "Xiaomi Vacuum Cleaner G20 EU",
+    "ean": "6941812791936",
+    "category": "Правосмукалки и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR8833EU",
+    "name": "Xiaomi W20 Wet Dry Vacuum",
+    "ean": "6941812791929",
+    "category": "Правосмукалки и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR8849GL",
+    "name": "Xiaomi Dual Wireless Mouse 2 W",
+    "ean": "6941812792223",
+    "category": "Електроника и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR8850GL",
+    "name": "Xiaomi Dual Wireless Mouse 2 B",
+    "ean": "6941812792216",
+    "category": "Електроника и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR8851GL",
+    "name": "Xiaomi 33W Power Bank 20000mAh tan",
+    "ean": "6941812792155",
+    "category": "Електроника и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR8859EU",
+    "name": "Xiaomi Robot Vacuum X20 Pro",
+    "ean": "6941812792322",
+    "category": "Правосмукалки и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR8869GL",
+    "name": "Xiaomi Gaming Mouse Lite",
+    "ean": "6941812792421",
+    "category": "Електроника и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR8915GL",
+    "name": "Xiaomi Wireless Mouse Lite 2 W",
+    "ean": "6941812792995",
+    "category": "Електроника и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR8916GL",
+    "name": "Xiaomi Wireless Mouse Lite 2 B",
+    "ean": "6941812792988",
+    "category": "Електроника и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR8936EU",
+    "name": "Xiaomi Blender EU",
+    "ean": "6941812795330",
+    "category": "Домашни апарати и лична нега",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR8940EU",
+    "name": "Xiaomi Desktop Heater",
+    "ean": "6941812795293",
+    "category": "Домашни апарати и лична нега",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR8975GL",
+    "name": "Xiaomi 33W Power Bank 20000mAh Blue",
+    "ean": "6941812795651",
+    "category": "Електроника и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR8992EU",
+    "name": "Xiaomi Smart Water Dispenser",
+    "ean": "6941812796337",
+    "category": "Домашни апарати и лична нега",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR8993EU",
+    "name": "Xiaomi Instant Hot Water",
+    "ean": "6941812796429",
+    "category": "Други производи и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR8995GL",
+    "name": "Motion Sensor Xiaomi 2S",
+    "ean": "6941812796405",
+    "category": "Smart Home и безбедност",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR8998EU",
+    "name": "Xiaomi Hair Clipper 2 EU",
+    "ean": "6941812796443",
+    "category": "Домашни апарати и лична нега",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR9016EU",
+    "name": "Xiaomi Rice Cooker 1.5L EU",
+    "ean": "6941812796474",
+    "category": "Домашни апарати и лична нега",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR9027EU",
+    "name": "Xiaomi Standing Steamer",
+    "ean": "6941812796689",
+    "category": "Домашни апарати и лична нега",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR9036EU",
+    "name": "Xiaomi Electric Kettle 2 Lite",
+    "ean": "6941812797013",
+    "category": "Домашни апарати и лична нега",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR9041GL",
+    "name": "Mi Temperature and Humidity 3",
+    "ean": "6941812797228",
+    "category": "Домашни апарати и лична нега",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR9072GL",
+    "name": "Xiaomi Power Bank Intergrated",
+    "ean": "6941812797518",
+    "category": "Електроника и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR9073GL",
+    "name": "Xiaomi Power Bank Intergrated",
+    "ean": "6941812797501",
+    "category": "Електроника и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR9098GL",
+    "name": "Xiaomi Faucet Water Purifier",
+    "ean": "6941812797860",
+    "category": "Други производи и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR9099GL",
+    "name": "Xiaomi El. Compressor 2 Pro",
+    "ean": "6941812797853",
+    "category": "Електроника и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR9177GL",
+    "name": "Xiaomi Business Backpack",
+    "ean": "6941812799345",
+    "category": "Електроника и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR9186GL",
+    "name": "Lampa XIAOMI LED Desk Lamp 2",
+    "ean": "6941812706961",
+    "category": "Други производи и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR9199GL",
+    "name": "Xiaomi Watch S4 Rainbow",
+    "ean": "6941812711668",
+    "category": "Нослива технологија и аудио",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR9220EU",
+    "name": "Xiaomi Robot Vacuum X20 Max EU",
+    "ean": "6941812777206",
+    "category": "Правосмукалки и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR9226EU",
+    "name": "Xiaomi Portable Blender",
+    "ean": "6941812764206",
+    "category": "Домашни апарати и лична нега",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR9283GL",
+    "name": "Redmi Buds 6 Play Blue",
+    "ean": "6941812737071",
+    "category": "Нослива технологија и аудио",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR9350GL",
+    "name": "Xiaomi Power Bank 10000mAh 22.5W Lite",
+    "ean": "6941812758663",
+    "category": "Електроника и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR9417EU",
+    "name": "Xiaomi Smart Projector L1",
+    "ean": "6941812706282",
+    "category": "Електроника и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR9462EU",
+    "name": "Xiaomi 120W HyperCharge Combo",
+    "ean": "6941812714638",
+    "category": "Телефони и таблети",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR9465EU",
+    "name": "Xiaomi 67W HyperCharge Combo",
+    "ean": "6941812714393",
+    "category": "Други производи и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR9528EU",
+    "name": "Xiaomi Electric Shaver S200 GR",
+    "ean": "6941812784549",
+    "category": "Домашни апарати и лична нега",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR9540GL",
+    "name": "Xiaomi Straw Mug",
+    "ean": "6941812776933",
+    "category": "Електроника и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR9588EU",
+    "name": "Xiaomi Smart Projector L1 Pro",
+    "ean": "6941812702048",
+    "category": "Електроника и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR9603GL",
+    "name": "Xiaomi Electric Scooter Elite",
+    "ean": "6941812702581",
+    "category": "Електрични тротинети и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR9664EU",
+    "name": "Xiaomi Robot Vacuum S40C",
+    "ean": "6941812701867",
+    "category": "Правосмукалки и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR9682EU",
+    "name": "Xiaomi Water Flosser 2",
+    "ean": "6932554412937",
+    "category": "Домашни апарати и лична нега",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR9738GL",
+    "name": "Xiaomi Power Bank 20000mAh (Integrated Cable) – Light Grey",
+    "ean": "6932554411817",
+    "category": "Електроника и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR9740GL",
+    "name": "Xiaomi Power Bank 20000mAh (Integrated Cable) – Dark Grey",
+    "ean": "6932554411824",
+    "category": "Електроника и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR9956EU",
+    "name": "Xiaomi 33W Charging Combo",
+    "ean": "6932554418366",
+    "category": "Електроника и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR9969EU",
+    "name": "Xiaomi Smart Pet Care Air Purifier",
+    "ean": "6932554418373",
+    "category": "Домашни апарати и лична нега",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR9970GL",
+    "name": "Xiaomi 212 Hypercharger PowerBank 25000",
+    "ean": "6932554418410",
+    "category": "Електроника и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "BHR9974GL",
+    "name": "Xiaomi Portable Printer 1S",
+    "ean": "6932554418427",
+    "category": "Електроника и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "DVB4231GL",
+    "name": "Mi Router 4C",
+    "ean": "6970244525529",
+    "category": "Електроника и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "DVB4314GL",
+    "name": "Xiaomi Router AX3200",
+    "ean": "6934177754951",
+    "category": "Електроника и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "DVB4330GL",
+    "name": "Xiaomi Router AC1200 EU",
+    "ean": "6934177773648",
+    "category": "Електроника и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "DVB4352GL",
+    "name": "Mi Wi-Fi Range Extender Pro",
+    "ean": "6934177789328",
+    "category": "Електроника и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "DVB4412GL",
+    "name": "Xiaomi Router AX1500",
+    "ean": "6941948702059",
+    "category": "Електроника и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "DVB4452GL",
+    "name": "Xiaomi Mesh System AC1200 EU(1-pack)",
+    "ean": "6941948703001",
+    "category": "Електроника и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "DVB4458GL",
+    "name": "Xiaomi Mesh System AX3000 NE",
+    "ean": "6941948703070",
+    "category": "Електроника и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "DVB4484GL",
+    "name": "Xiaomi Mesh System AC1200 3pac",
+    "ean": "6941948704060",
+    "category": "Електроника и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "DVB4493GL",
+    "name": "Xiaomi Router BE3600 2.5G",
+    "ean": "6941948704374",
+    "category": "Електроника и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "DZN4019TW",
+    "name": "Mi Cordless Screwdriver",
+    "ean": "6934177717024",
+    "category": "Електроника и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "ELA6364EU",
+    "name": "Xiaomi Gaming Monitor G24i 2026",
+    "ean": "6941948707979",
+    "category": "Електроника и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "ELA6370EU",
+    "name": "Xiaomi Gaming Monitor G27i 2026",
+    "ean": "6941948708013",
+    "category": "Електроника и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "ELA6562EU",
+    "name": "XIAOMI Gaming Monitor G34WQi 2026",
+    "ean": "6941948709102",
+    "category": "Електроника и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "GDS4145GL",
+    "name": "Mi 20W Wireless Charging Stand",
+    "ean": "6934177716188",
+    "category": "Електроника и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "GDS4147GL",
+    "name": "Mi 37W Dual-Port Car Charger",
+    "ean": "6934177716201",
+    "category": "Електроника и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "GPX4015RT",
+    "name": "Yeelight Lightstrip Plus Exten",
+    "ean": "6924922201816",
+    "category": "Други производи и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "GPX4026GL",
+    "name": "Mi Smart LED Bulb Warm White",
+    "ean": "6934177716546",
+    "category": "Други производи и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "MZB0IJAEU",
+    "name": "Redmi Note 14 Pro+ 5G 8/256 Bl",
+    "ean": "6932554401610",
+    "category": "Телефони и таблети",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "MZB0KOAEU",
+    "name": "Redmi 15C 4/128GB Black",
+    "ean": "6932554444860",
+    "category": "Телефони и таблети",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "MZB0L1JEU",
+    "name": "REDMI 15 6/128GB Purple",
+    "ean": "6932554450168",
+    "category": "Телефони и таблети",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "MZB0L50EU",
+    "name": "REDMI 15 5G 4/128GB Black",
+    "ean": "6932554452131",
+    "category": "Телефони и таблети",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "MZB0L9SEU",
+    "name": "REDMI 15 5G 4/128GB Green",
+    "ean": "6932554454562",
+    "category": "Телефони и таблети",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "MZB0LCFEU",
+    "name": "Redmi 15C 4/128GB Green",
+    "ean": "6932554455484",
+    "category": "Телефони и таблети",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "MZB0LITEU",
+    "name": "Redmi 15C 5G 4/128GB Green",
+    "ean": "6932554458669",
+    "category": "Телефони и таблети",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "MZB0LWDEU",
+    "name": "RN 15 5G 6/128Gb Purple",
+    "ean": "6932554469658",
+    "category": "Други производи и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "MZB0LWHEU",
+    "name": "RN 15 5G 6/128gb Blue",
+    "ean": "6932554469696",
+    "category": "Други производи и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "MZB0LWLEU",
+    "name": "RN 15 5G 6/128GB Black",
+    "ean": "6932554469245",
+    "category": "Други производи и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "MZB0LZLEU",
+    "name": "RN 15 Pro 5G 8/256GB Titanium",
+    "ean": "6932554470401",
+    "category": "Други производи и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "MZB0M27EU",
+    "name": "RN 15 Pro 5G 8/256GB Black",
+    "ean": "6932554471521",
+    "category": "Други производи и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "MZB0M8EEU",
+    "name": "RN 15 6/128GB Black",
+    "ean": "6932554476267",
+    "category": "Други производи и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "MZB0MD2EU",
+    "name": "RN 15 Pro 5G 8/256GB Black",
+    "ean": "6932554485177",
+    "category": "Други производи и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "MZB0MD6EU",
+    "name": "RN 15 Pro 5G 8/256 Blu",
+    "ean": "6932554485214",
+    "category": "Други производи и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "MZB0MI3EU",
+    "name": "RN 15 pro+ 5G 8/256 Blue",
+    "ean": "6932554490126",
+    "category": "Други производи и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "MZB0MI4EU",
+    "name": "RN 15 pro+ 5G 8/256 Black",
+    "ean": "6932554490133",
+    "category": "Други производи и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "MZB0MIGEU",
+    "name": "RN 15 pro+ 5G 8/256 Brown",
+    "ean": "6932554481605",
+    "category": "Други производи и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "MZB0MJ6EU",
+    "name": "RN 15 Pro+ 5G 12/512GB Brown",
+    "ean": "6932554481841",
+    "category": "Други производи и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "MZB0MJKEU",
+    "name": "RN 15 Pro+ 5G 12/512GB Blue",
+    "ean": "6932554481971",
+    "category": "Други производи и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "MZB0MMZEU",
+    "name": "Xiaomi 17 Ultra 16/512GB White",
+    "ean": "6932554483609",
+    "category": "Телефони и таблети",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "MZB0MN9EU",
+    "name": "Xiaomi 17 Ultra 16/512GB Black",
+    "ean": "6932554483753",
+    "category": "Телефони и таблети",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "MZB0NCFEU",
+    "name": "REDMI A7 Pro 4/64GB Palm Green",
+    "ean": "6932554496968",
+    "category": "Телефони и таблети",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "MZB0NCHEU",
+    "name": "REDMI A7 Pro 4/64GB Black",
+    "ean": "6932554496982",
+    "category": "Телефони и таблети",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "MZB0NCIEU",
+    "name": "REDMI A7 Pro 4/64GB Mist Blue",
+    "ean": "6932554496999",
+    "category": "Телефони и таблети",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "MZB0NCJEU",
+    "name": "REDMI A7 Pro 4/128GB Black",
+    "ean": "6932554497002",
+    "category": "Телефони и таблети",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "MZB0NCLEU",
+    "name": "REDMI A7 Pro 4/128gb Mist Blue",
+    "ean": "6932554497026",
+    "category": "Телефони и таблети",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "MZB0NIEEU",
+    "name": "REDMI Note 17 6/256 Black",
+    "ean": "6932554452636",
+    "category": "Телефони и таблети",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "MZB0NKDEU",
+    "name": "REDMI Note 17 6/256gb Sky Teal",
+    "ean": "6932554425630",
+    "category": "Телефони и таблети",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "MZB0NOSEU",
+    "name": "Xiaomi 17T 12/512GB Black",
+    "ean": "6932554448080",
+    "category": "Телефони и таблети",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "MZB0NYGEU",
+    "name": "Xiaomi 17T Pro 12/512GB Black",
+    "ean": "6932554422578",
+    "category": "Телефони и таблети",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "MZB0O33EU",
+    "name": "Xiaomi 17T Pro 12/512GB Blue",
+    "ean": "6932554497866",
+    "category": "Телефони и таблети",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "MZB0OSCEU",
+    "name": "REDMI Note 17 6/256GB Celestial Purple",
+    "ean": "6939093009369",
+    "category": "Телефони и таблети",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "MZB0OVIEU",
+    "name": "REDMI Note 17 Pro 5G 6/256GB Black",
+    "ean": "6939093009963",
+    "category": "Телефони и таблети",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "MZB0OY3EU",
+    "name": "REDMI Note 17 Pro 5G 8/512GB Black",
+    "ean": "6939093005781",
+    "category": "Телефони и таблети",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "MZB0OYSEU",
+    "name": "REDMI Note 17 Pro 5G 8/512GB Sky Blue",
+    "ean": "6939093010822",
+    "category": "Телефони и таблети",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "MZB0P2REU",
+    "name": "REDMI Note 17 Pro Max 5G 8/256GB Black",
+    "ean": "6939093005057",
+    "category": "Телефони и таблети",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "MZB0P3YEU",
+    "name": "REDMI Note 17 Pro Max 5G 8/512GB Black",
+    "ean": "6939093011959",
+    "category": "Телефони и таблети",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "MZB0P4NEU",
+    "name": "REDMI Note 17 Pro Max 5G 8/256GB Green",
+    "ean": "6939093004715",
+    "category": "Телефони и таблети",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "MZB0P55EU",
+    "name": "REDMI Note 17 Pro Max 5G 8/256GB Cloud Blush",
+    "ean": "6939093004548",
+    "category": "Телефони и таблети",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "MZB0P7YEU",
+    "name": "REDMI Note 17 4/128GB Celestial Purple",
+    "ean": "6939093006726",
+    "category": "Телефони и таблети",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "MZB0P8PEU",
+    "name": "REDMI Note 17 4/128GB Black",
+    "ean": "6939093006498",
+    "category": "Телефони и таблети",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "MZB0P8QEU",
+    "name": "REDMI Note 17 4/128GB Sky Teal",
+    "ean": "6939093006504",
+    "category": "Телефони и таблети",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "MZB0PC8EU",
+    "name": "REDMI 17 5G 4/128gb Black",
+    "ean": "6939093008690",
+    "category": "Телефони и таблети",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "MZB0PCDEU",
+    "name": "REDMI 17 5G 4/128gb Blue",
+    "ean": "6939093012505",
+    "category": "Телефони и таблети",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "MZB0PJGEU",
+    "name": "REDMI 17 4/128gb Black",
+    "ean": "6939093018675",
+    "category": "Телефони и таблети",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "MZB0PK7EU",
+    "name": "REDMI 17 4/256GB Black",
+    "ean": "6939093018408",
+    "category": "Телефони и таблети",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "MZB0PKQEU",
+    "name": "REDMI 17 4/128GB Oak Green",
+    "ean": "6939093018330",
+    "category": "Телефони и таблети",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "MZB0PMEEU",
+    "name": "REDMI 17 4/256GB Oak Green",
+    "ean": "6939093018217",
+    "category": "Телефони и таблети",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "MZB0PMIEU",
+    "name": "REDMI 17 4/128gb Deep Blue",
+    "ean": "6939093017906",
+    "category": "Телефони и таблети",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "MZB0PO2EU",
+    "name": "REDMI 17 4/256GB Deep Blue",
+    "ean": "6939093017876",
+    "category": "Телефони и таблети",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "MZB0PSQEU",
+    "name": "REDMI Note 17 5G 6/128GB Black",
+    "ean": "6939093020456",
+    "category": "Телефони и таблети",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "MZB0PSVEU",
+    "name": "REDMI Note 17 5G 6/128GB Sky Teal",
+    "ean": "6939093020500",
+    "category": "Телефони и таблети",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "MZB0PTSEU",
+    "name": "REDMI Note 17 5G 6/256GB Celestial Purple",
+    "ean": "6939093021439",
+    "category": "Телефони и таблети",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "MZB0PTUEU",
+    "name": "REDMI Note 17 5G 6/256GB Sky Teal",
+    "ean": "6939093021453",
+    "category": "Телефони и таблети",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "MZB0PU2EU",
+    "name": "REDMI Note 17 5G 6/128GB Sky Teal",
+    "ean": "6939093020326",
+    "category": "Телефони и таблети",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "MZB0Q65EU",
+    "name": "REDMI Note 17 5G 6/256GB Sky Teal",
+    "ean": "6939093026038",
+    "category": "Телефони и таблети",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "MZB0Q69EU",
+    "name": "REDMI Note 17 5G 6/256GB Black",
+    "ean": "6939093026076",
+    "category": "Телефони и таблети",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "MZB0Q6BEU",
+    "name": "REDMI Note 17 5G 6/256GB Celestial Purple",
+    "ean": "6939093026090",
+    "category": "Телефони и таблети",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "NUN4090GL",
+    "name": "Mi Electric Toothbrush head",
+    "ean": "6934177713125",
+    "category": "Правосмукалки и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "PFJ4191EU",
+    "name": "Xiaomi TV Box S (3rd Gen)",
+    "ean": "6941948704916",
+    "category": "Електроника и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "QBH4238EU",
+    "name": "Xiaomi Smart Speaker Lite",
+    "ean": "6934177789281",
+    "category": "Електроника и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "QBH4261GL",
+    "name": "S29D Xiaomi Sound Outdoor 30W",
+    "ean": "6941948702028",
+    "category": "Електроника и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "QBH4265GL",
+    "name": "S29D Xiaomi SoundOutdoor Blue",
+    "ean": "6941948702028",
+    "category": "Електроника и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "QBH4269GL",
+    "name": "Xiaomi Bluetooth Speaker (5W)",
+    "ean": "6941948702349",
+    "category": "Електроника и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "QBH4275GL",
+    "name": "Xiaomi Bluetooth Speaker",
+    "ean": "6941948703391",
+    "category": "Електроника и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "QBH4276GL",
+    "name": "Xiaomi Desktop Speaker",
+    "ean": "6941812793008",
+    "category": "Електроника и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "QBH4321GL",
+    "name": "Xiaomi Sound Party NS7-GL",
+    "ean": "6941948706743",
+    "category": "Електроника и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "QBH4378GL",
+    "name": "Xiaomi Sound Pocket Blue Gray",
+    "ean": "6941948709201",
+    "category": "Електроника и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "QBH4380GL",
+    "name": "Xiaomi Sound Pocket Pink",
+    "ean": "6941948709218",
+    "category": "Електроника и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "QBH4422GL",
+    "name": "Xiaomi Sound Play 18W (Black)",
+    "ean": "6941948710900",
+    "category": "Електроника и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "QBH4431GL",
+    "name": "Xiaomi Sound Play 18W Purple",
+    "ean": "6941948710993",
+    "category": "Електроника и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "QBH4433GL",
+    "name": "Xiaomi Sound Play 18W Green",
+    "ean": "6941948711013",
+    "category": "Електроника и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "QBH4435GL",
+    "name": "Xiaomi Sound Play 18W White",
+    "ean": "6941948711037",
+    "category": "Електроника и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "SCG4011TW",
+    "name": "Mi Air Purifier Filter AntiBac",
+    "ean": "6970244526328",
+    "category": "Правосмукалки и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "SCG4021GL",
+    "name": "Mi Air Purifier HEPA Filter",
+    "ean": "6934177712685",
+    "category": "Правосмукалки и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "SKV4114TY",
+    "name": "Mi Robot Vacuum-Mop P",
+    "ean": "6934177716263",
+    "category": "Правосмукалки и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "SKV4117TY",
+    "name": "Mi Robot Vacuum-Mop P S.Brush",
+    "ean": "6934177716362",
+    "category": "Правосмукалки и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "SKV4118TY",
+    "name": "Mi Robot Vacuum-Mop P SideBrus",
+    "ean": "6934177716379",
+    "category": "Правосмукалки и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "SKV4121TY",
+    "name": "Mi Robot Vacuum-Mop P.Bruch Co",
+    "ean": "6934177716409",
+    "category": "Правосмукалки и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "SKV4122TY",
+    "name": "Mi Robot Vacuum-Mop P Brush",
+    "ean": "6934177716416",
+    "category": "Правосмукалки и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "SKV4123TY",
+    "name": "Mi Robot Vacuum-Mop P.Mop.Pad",
+    "ean": "6934177716423",
+    "category": "Правосмукалки и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "SKV4124TY",
+    "name": "Mi Robot Vacuum-Mop P.Water Ta",
+    "ean": "6934177716430",
+    "category": "Правосмукалки и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "SKV4127TY",
+    "name": "Mi Robot Vacuum-Mop S.Brush",
+    "ean": "6934177716904",
+    "category": "Правосмукалки и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "SKV4130TY",
+    "name": "Mi Robot Vacuum-Mop Brush Cove",
+    "ean": "6934177716935",
+    "category": "Правосмукалки и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "SKV4131TY",
+    "name": "Mi Robot Vacuum-Mop Mop Pad",
+    "ean": "6934177716942",
+    "category": "Правосмукалки и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "SKV4132TY",
+    "name": "Mi Robot Vacuum-Mop Disp.Mop",
+    "ean": "6934177716959",
+    "category": "Правосмукалки и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "SKV4133TY",
+    "name": "Mi Robot Vacuum-Mop Wate",
+    "ean": "6934177716966",
+    "category": "Правосмукалки и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "TEJ4019GL",
+    "name": "Mi Portable Photo PrinterPaper",
+    "ean": "6934177716485",
+    "category": "Електроника и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "VHU5659EU",
+    "name": "Redmi Pad 2 4/128GB Gray",
+    "ean": "6932554433383",
+    "category": "Телефони и таблети",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "VHU5660EU",
+    "name": "Redmi Pad 2 4G 4/128GB Gray",
+    "ean": "6932554433222",
+    "category": "Телефони и таблети",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "VHU6140EU",
+    "name": "Redmi Pad 2 Pro 6/128G Gray",
+    "ean": "6932554463670",
+    "category": "Телефони и таблети",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "VHU6149EU",
+    "name": "Redmi Pad 2 Pro 5G 8/256GB Gra",
+    "ean": "6932554465438",
+    "category": "Телефони и таблети",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "VHU6152EU",
+    "name": "Redmi Pad 2 Pro 5G 6/128GB Gra",
+    "ean": "6932554465469",
+    "category": "Телефони и таблети",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "VHU6249EU",
+    "name": "Redmi Pad 2 Pro 8/256GB Silver",
+    "ean": "6932554467326",
+    "category": "Телефони и таблети",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "VHU6253EU",
+    "name": "Redmi Pad 2 Pro 6/128G Silver",
+    "ean": "6932554467364",
+    "category": "Телефони и таблети",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "VHU6756EU",
+    "name": "REDMI Pad 2 9.7 4/128GB Gray",
+    "ean": "6932554410421",
+    "category": "Телефони и таблети",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "VHU6768EU",
+    "name": "REDMI Pad 2 9.7 4/128 Silver",
+    "ean": "6932554410650",
+    "category": "Телефони и таблети",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "VHU6799EU",
+    "name": "REDMI Pad 2 9.7 4/64GB Gray",
+    "ean": "6932554449391",
+    "category": "Телефони и таблети",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "VHU6803EU",
+    "name": "REDMI Pad 2 9.7 4/64GB Silver",
+    "ean": "6932554449636",
+    "category": "Телефони и таблети",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "YTC4040GL",
+    "name": "Mi Wireless Switch",
+    "ean": "6934177710834",
+    "category": "Smart Home и безбедност",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "YTC4043GL",
+    "name": "Mi Light Detection Sensor",
+    "ean": "6934177710865",
+    "category": "Smart Home и безбедност",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "ZJB4143GL",
+    "name": "Mi Casual Daypack (Black)",
+    "ean": "6934177706097",
+    "category": "Електроника и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "ZJB4144GL",
+    "name": "Mi Casual Daypack (Dark Blue)",
+    "ean": "6934177706103",
+    "category": "Електроника и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  },
+  {
+    "sku": "ZJB4147GL",
+    "name": "Mi Casual Daypack (Pink)",
+    "ean": "6934177706134",
+    "category": "Електроника и додатоци",
+    "specs": {},
+    "status": "pending",
+    "source": "",
+    "productUrl": ""
+  }
+]
