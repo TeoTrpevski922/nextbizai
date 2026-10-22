@@ -12,11 +12,9 @@ export default async function handler(req, res) {
     return res.status(400).send("Missing Instagram authorization code.");
   }
 
-const appId = "1396330425251232";
+  const appId = "1396330425251232";
   const appSecret = process.env.INSTAGRAM_APP_SECRET;
-
-  const redirectUri =
-    "https://nextbizai.vercel.app/api/instagram-auth";
+  const redirectUri = "https://nextbizai.vercel.app/api/instagram-auth";
 
   try {
     // 1. Exchange authorization code for short-lived token
@@ -49,14 +47,23 @@ const appId = "1396330425251232";
 
     const shortLivedToken = tokenData.access_token;
 
-    // 2. Exchange short-lived token for long-lived token
-    const longTokenUrl =
-      "https://graph.instagram.com/access_token" +
-      "?grant_type=ig_exchange_token" +
-      `&client_secret=${encodeURIComponent(appSecret)}` +
-      `&access_token=${encodeURIComponent(shortLivedToken)}`;
+    // 2. Exchange short-lived token for long-lived token.
+    // This endpoint must be called with POST and form-encoded parameters.
+    const longTokenResponse = await fetch(
+      "https://graph.instagram.com/access_token",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded"
+        },
+        body: new URLSearchParams({
+          grant_type: "ig_exchange_token",
+          client_secret: appSecret,
+          access_token: shortLivedToken
+        })
+      }
+    );
 
-    const longTokenResponse = await fetch(longTokenUrl);
     const longTokenData = await longTokenResponse.json();
 
     if (!longTokenResponse.ok || !longTokenData.access_token) {
@@ -71,11 +78,8 @@ const appId = "1396330425251232";
 
     // 3. Get Instagram account information
     const meResponse = await fetch(
-      `https://graph.instagram.com/me?fields=id,username&access_token=${encodeURIComponent(
-        longLivedToken
-      )}`
+      `https://graph.instagram.com/me?fields=id,username&access_token=${encodeURIComponent(longLivedToken)}`
     );
-
     const meData = await meResponse.json();
 
     if (!meResponse.ok || !meData.id) {
@@ -88,12 +92,9 @@ const appId = "1396330425251232";
 
     // 4. Calculate token expiration
     const expiresIn = Number(longTokenData.expires_in || 5184000);
-    const tokenExpiresAt = new Date(
-      Date.now() + expiresIn * 1000
-    ).toISOString();
+    const tokenExpiresAt = new Date(Date.now() + expiresIn * 1000).toISOString();
 
     // 5. Save to Supabase
-    // state will contain the ReplyoAI business_id
     const businessId = state;
 
     if (!businessId) {
@@ -102,13 +103,16 @@ const appId = "1396330425251232";
       );
     }
 
-      // Check whether this Instagram account is already connected
+    const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+    const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+
+    // Check whether this Instagram account is already connected
     const existingResponse = await fetch(
-      `${process.env.NEXT_PUBLIC_SUPABASE_URL}/rest/v1/instagram_accounts?instagram_user_id=eq.${encodeURIComponent(String(meData.id))}&select=business_id,instagram_username`,
+      `${supabaseUrl}/rest/v1/instagram_accounts?instagram_user_id=eq.${encodeURIComponent(String(meData.id))}&select=business_id,instagram_username`,
       {
         headers: {
-          apikey: process.env.SUPABASE_SERVICE_ROLE_KEY,
-          Authorization: `Bearer ${process.env.SUPABASE_SERVICE_ROLE_KEY}`
+          apikey: supabaseKey,
+          Authorization: `Bearer ${supabaseKey}`
         }
       }
     );
@@ -133,14 +137,13 @@ const appId = "1396330425251232";
         );
       }
 
-      // Same account and same business: update its token
       const updateResponse = await fetch(
-        `${process.env.NEXT_PUBLIC_SUPABASE_URL}/rest/v1/instagram_accounts?instagram_user_id=eq.${encodeURIComponent(String(meData.id))}&business_id=eq.${encodeURIComponent(businessId)}`,
+        `${supabaseUrl}/rest/v1/instagram_accounts?instagram_user_id=eq.${encodeURIComponent(String(meData.id))}&business_id=eq.${encodeURIComponent(businessId)}`,
         {
           method: "PATCH",
           headers: {
-            apikey: process.env.SUPABASE_SERVICE_ROLE_KEY,
-            Authorization: `Bearer ${process.env.SUPABASE_SERVICE_ROLE_KEY}`,
+            apikey: supabaseKey,
+            Authorization: `Bearer ${supabaseKey}`,
             "Content-Type": "application/json",
             Prefer: "return=minimal"
           },
@@ -154,21 +157,17 @@ const appId = "1396330425251232";
       );
 
       if (!updateResponse.ok) {
-        console.error(
-          "Instagram account update error:",
-          await updateResponse.text()
-        );
+        console.error("Instagram account update error:", await updateResponse.text());
         return res.status(500).send("Could not update Instagram account.");
       }
     } else {
-      // New Instagram account: insert a new row
       const insertResponse = await fetch(
-        `${process.env.NEXT_PUBLIC_SUPABASE_URL}/rest/v1/instagram_accounts`,
+        `${supabaseUrl}/rest/v1/instagram_accounts`,
         {
           method: "POST",
           headers: {
-            apikey: process.env.SUPABASE_SERVICE_ROLE_KEY,
-            Authorization: `Bearer ${process.env.SUPABASE_SERVICE_ROLE_KEY}`,
+            apikey: supabaseKey,
+            Authorization: `Bearer ${supabaseKey}`,
             "Content-Type": "application/json",
             Prefer: "return=minimal"
           },
@@ -184,10 +183,7 @@ const appId = "1396330425251232";
       );
 
       if (!insertResponse.ok) {
-        console.error(
-          "Instagram account insert error:",
-          await insertResponse.text()
-        );
+        console.error("Instagram account insert error:", await insertResponse.text());
         return res.status(500).send("Could not save Instagram account.");
       }
     }
@@ -201,10 +197,8 @@ const appId = "1396330425251232";
         </body>
       </html>
     `);
-
   } catch (err) {
     console.error("Instagram OAuth error:", err);
-
     return res.status(500).json({
       error: "Instagram connection failed"
     });
