@@ -47,22 +47,17 @@ export default async function handler(req, res) {
 
     const shortLivedToken = tokenData.access_token;
 
-    // 2. Exchange short-lived token for long-lived token.
-    // This endpoint must be called with POST and form-encoded parameters.
-    const longTokenResponse = await fetch(
-      "https://graph.instagram.com/access_token",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/x-www-form-urlencoded"
-        },
-        body: new URLSearchParams({
-          grant_type: "ig_exchange_token",
-          client_secret: appSecret,
-          access_token: shortLivedToken
-        })
-      }
-    );
+   
+    // 2. Exchange short-lived token for long-lived token
+    const longTokenUrl = new URL("https://graph.instagram.com/access_token");
+
+    longTokenUrl.searchParams.set("grant_type", "ig_exchange_token");
+    longTokenUrl.searchParams.set("client_secret", appSecret);
+    longTokenUrl.searchParams.set("access_token", shortLivedToken);
+
+    const longTokenResponse = await fetch(longTokenUrl.toString(), {
+      method: "GET"
+    });
 
     const longTokenData = await longTokenResponse.json();
 
@@ -75,6 +70,7 @@ export default async function handler(req, res) {
     }
 
     const longLivedToken = longTokenData.access_token;
+
 
     // 3. Get Instagram account information
     const meResponse = await fetch(
